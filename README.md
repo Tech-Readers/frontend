@@ -23,7 +23,7 @@
 
 ... 
 
-## Arquitetura do Front:triangular_ruler: :straight_ruler:
+## Arquitetura do Frontend :triangular_ruler: :straight_ruler:
 
 ```plaintext
 public/
