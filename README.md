@@ -30,7 +30,6 @@
 
 - [Figma](https://www.figma.com/design/aGEyPhnpQwSCnvYnHYNIyW/Untitled?node-id=0-1&t=EUUURJpekyeWPhST-0)
 
-... 
 
 ## Arquitetura do Frontend :triangular_ruler: :straight_ruler:
 
