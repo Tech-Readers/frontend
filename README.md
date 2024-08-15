@@ -55,7 +55,7 @@ $ npm install
 ## Executar app :arrow_forward:
 
 ```bash
-$ npm start
+$ npm run dev
 ```
 ... 
 
