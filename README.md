@@ -53,11 +53,16 @@ $ npm install
 ```
 
 ## Executar app :arrow_forward:
-
+ 
+**development:**
 ```bash
 $ npm run dev
 ```
-... 
+
+```bash
+Running on http://localhost:5173/
+```
+...  
 
 ## Licença 
 
