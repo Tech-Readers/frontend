@@ -15,7 +15,9 @@
 
 ### Tópicos 
 
+
 :small_blue_diamond: [Protótipo das Telas](#protótipo-das-telas-art) :heavy_check_mark:
+
 
 :small_blue_diamond: [Arquitetura do Frontend](#arquitetura-do-frontend-triangular_ruler-straight_ruler) :warning:
 

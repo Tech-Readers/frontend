@@ -1,6 +1,5 @@
 import React from 'react';
-import { Nav } from './style';
-import { Button } from '@mui/material';
+import { Nav, NavLink, Subscribe } from './style';
 
 
 
@@ -12,14 +11,15 @@ export const MenuNav = () => {
         <div>
             <Nav>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Avaliações</a></li>
-                    <li>
+                    <NavLink><a href="#">About</a></NavLink>
+                    <NavLink><a href="#">Features</a></NavLink>
+                    <NavLink><a href="#">Avaliações</a></NavLink>
+                    <NavLink>
                         <Subscribe>
                             Inscreva-se
                         </Subscribe>
-                    </li>
+                        
+                    </NavLink>
                 </ul> 
             </Nav>
         </div>
