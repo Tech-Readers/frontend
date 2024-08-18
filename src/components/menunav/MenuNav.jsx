@@ -16,7 +16,7 @@ export const MenuNav = () => {
                     <NavLink><a href="#">Avaliações</a></NavLink>
                     <NavLink>
                         <Subscribe>
-                        OXE
+                            Inscreva-se
                         </Subscribe>
                         
                     </NavLink>
