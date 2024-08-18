@@ -10,3 +10,6 @@ export const NavLink = styled.li`
     padding: 0;
     display: flex;
 `
+export const Subscribe = styled.button`
+background-color: ${props => props.theme.colors.VerdeEscuro};
+`

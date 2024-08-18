@@ -6,7 +6,6 @@ export const LandingPage = () => {
     return (
     <>
         <MenuNav/>
-
     </>
 )
 }
