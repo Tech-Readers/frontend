@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <div className="left-section">
+        <img src="src/components/LOGO TECH READERS.png" alt="Tech Reader Logo" className="logo" />
+        <img src="src/components/TECH READER logo 2.png" alt="Tech Reader Logo" className="logo2" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="right-section">
+        <div className="login-box">
+          <form>
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" placeholder="Insira seu email." />
+
+            <label htmlFor="password">Senha:</label>
+            <input type="password" id="password" placeholder="Insira sua senha." />
+
+            <div className="options">
+              <div>
+                <input type="checkbox" id="remember" />
+                <label htmlFor="remember">Lembre-se</label>
+              </div>
+              <a href="#" className="forgot-password">Esqueci a senha</a>
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <div className="separator">
+              <span>ou</span>
+            </div>
+
+            <div className="register">
+              Ainda não possui cadastro? <a href="#">Cadastre-se</a>
+            </div>
+          </form>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
