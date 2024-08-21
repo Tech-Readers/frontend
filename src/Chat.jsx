@@ -47,7 +47,7 @@ const Chat = () => {
         if (!response.ok) {
           throw new Error('Falha ao enviar mensagem' + error.message);
         }
-        const sentMessage = { id: Date.now(), text: newMessage, type: 'sent' };
+        const sentMessage = { id: Date.now(), usuario_remetente_id: UserLogado, texto: newMessage };
         setMessages([...messages, sentMessage]);
         setNewMessage('');
       } catch (error) {
