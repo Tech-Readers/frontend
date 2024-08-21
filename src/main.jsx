@@ -4,12 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import { ThemeProvider } from 'styled-components';
 import { Theme } from './GlobalStyle.jsx';
-
+import Chat from './Chat.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={Theme}>
-      <App />
+      <App />      
+      <Chat />
     </ThemeProvider>
   </StrictMode>
 )

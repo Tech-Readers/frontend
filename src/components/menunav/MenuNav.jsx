@@ -14,7 +14,7 @@ export const MenuNav = () => {
                     <NavLink><a href="#">About</a></NavLink>
                     <NavLink><a href="#">Features</a></NavLink>
                     <NavLink><a href="#">Avaliações</a></NavLink>
-                    <NavLink><a href="#">Chat</a></NavLink>
+                    <NavLink><a href="/Chat">Chat</a></NavLink>
                     <NavLink>
                         <Subscribe>
                             Inscreva-se
