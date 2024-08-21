@@ -17,5 +17,9 @@ export const Theme = {
         CinzaQuatro: '#CCC8C8',
         CinzaCinco: '#8B8B8B',
     },
-    fonts:["Inter", "Irish Grover", "Koulen" ]
+    fonts:{
+       Principal: 'Inter',
+        Segunda: 'Irish Grover',
+        Terceira:'Koulen'
+    },
 };
