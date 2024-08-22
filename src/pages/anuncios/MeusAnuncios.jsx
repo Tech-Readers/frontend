@@ -1,4 +1,4 @@
-// src/pages/anuncios/MeusAnuncios.jsx:
+//src/pages/anuncios/MeusAnuncios.jsx:
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getExchangesByUserId, deleteExchange, closeExchange } from '../../services/exchangeService';
