@@ -4,6 +4,7 @@ import Chat from "./components/Chat/Chat.jsx";
 
 function App() {
     //<Chat />
+    //<VisualizarAnuncio />
     return (
         <>
             <LandingPage />

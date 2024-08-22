@@ -1,5 +1,4 @@
 import React from "react";
-import {} from "../../components/menunav/style";
 import * as S from "./Style";
 import Logomarca from "/src/assets/TECH-READER-copiar.svg";
 import ReadingCat from "../../assets/book.svg";
@@ -9,6 +8,7 @@ import { DivColumn, DivRow } from "../../GlobalStyle";
 import GatoUm from "../../assets/bell.svg";
 import GatoDois from "../../assets/Chat.svg";
 import GatoTres from "../../assets/gifts.svg";
+
 export const LandingPage = () => {
     return (
         <S.Body>
