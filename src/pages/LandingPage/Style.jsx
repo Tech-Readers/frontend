@@ -64,7 +64,10 @@ export const Subscribe = styled.button`
     color: ${(props) => props.theme.colors.Branco};
     font-size: 1.2rem;
     border: none;
+    transition: all 0.5s;
     &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
         color: ${(props) => props.theme.colors.VerdeEscuro};
     }
@@ -80,8 +83,10 @@ export const LoginLandingPage = styled.button`
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
-
+    transition: all 0.5s;
     &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
         background-color: ${(props) => props.theme.colors.Branco};
         color: ${(props) => props.theme.colors.VerdeEscuro};
@@ -129,10 +134,22 @@ export const CardLandingPage = styled.div`
     height: 300px;
     border-radius: 10px;
     gap: 2rem;
+    transition: all 0.5s;
     background-color: ${(props) => props.theme.colors.Branco};
     box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
+    &:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
 `;
-
+export const CardText = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: none;
+    padding: none;
+    align-items: center;
+    text-align: center;
+`;
 export const ImagemCard = styled.img``;
 
 //COMEÇO SUBSCRIBE
@@ -149,9 +166,12 @@ export const SubscribeButton = styled.button`
     font-family: ${(props) => props.theme.fonts.Segunda};
     width: 320px;
     border: none;
+    transition: all 0.5s;
     &:hover {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
         color: ${(props) => props.theme.colors.VerdeEscuro};
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
     }
 `;
 export const CallForAction = styled.p`

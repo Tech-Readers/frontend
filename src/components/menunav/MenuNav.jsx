@@ -5,6 +5,7 @@ import LogoNavBar from "../src/assets/LOGO-TR.svg";
 
 export const MenuNav = () => {
     return (
+<<<<<<< HEAD
         <>
             <div>
                 <Nav>
@@ -27,3 +28,25 @@ export const MenuNav = () => {
         </>
     );
 };
+=======
+    <>
+        <div>
+            <Nav>
+                <ul>
+                    <NavLink><a href="#">About</a></NavLink>
+                    <NavLink><a href="#">Features</a></NavLink>
+                    <NavLink><a href="#">Avaliações</a></NavLink>
+                    <NavLink><a href="/Chat">Chat</a></NavLink>
+                    <NavLink>
+                        <Subscribe>
+                            Inscreva-se
+                        </Subscribe>
+                        
+                    </NavLink>
+                </ul> 
+            </Nav>
+        </div>
+    </>
+)
+}
+>>>>>>> origin/Chat-Fran

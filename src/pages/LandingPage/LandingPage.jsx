@@ -6,7 +6,9 @@ import ReadingCat from "../../assets/book.svg";
 import LandingPageHeader from "/src/assets/Landing-page.svg";
 import LoginIcon from "@mui/icons-material/Login";
 import { DivColumn, DivRow } from "../../GlobalStyle";
-
+import GatoUm from "../../assets/bell.svg";
+import GatoDois from "../../assets/Chat.svg";
+import GatoTres from "../../assets/gifts.svg";
 export const LandingPage = () => {
     return (
         <S.Body>
@@ -59,23 +61,23 @@ export const LandingPage = () => {
             <section id="Features">
                 <S.CardLandingPage>
                     <S.ImagemCard
-                        src={LandingPageHeader}
+                        src={GatoUm}
                         alt="imagem de livros em um notebook"
                     ></S.ImagemCard>
-                    <DivColumn>
-                        <h2>ANUNCIE</h2>
+                    <S.CardText>
+                        <S.Título>ANUNCIE</S.Título>
                         <p>
                             Aqui você pode anunciar seus livros de forma rápida e fácil.
                             Conecte-se com outros leitores, troque histórias e descubra
                             novas aventuras literárias. Anunciando seu livro você valoriza
                             a leitura e a troca de conhecimentos!
                         </p>
-                    </DivColumn>
+                    </S.CardText>
                 </S.CardLandingPage>
 
                 <S.CardLandingPage>
-                    <DivColumn>
-                        <h2>CONVERSE</h2>
+                    <S.CardText>
+                        <S.Título>CONVERSE</S.Título>
                         <p>
                             No Tech Readers, você não apenas troca livros, mas também faz
                             novas conexões. Nosso site oferece um espaço para chat, onde
@@ -83,19 +85,19 @@ export const LandingPage = () => {
                             estão anunciando. Dessa forma, a troca de informações se torna
                             mais fluida e a comunidade fica ainda mais rica e envolvente!
                         </p>
-                    </DivColumn>
+                    </S.CardText>
                     <S.ImagemCard
-                        src={LandingPageHeader}
+                        src={GatoDois}
                         alt="imagem de livros em um notebook"
                     ></S.ImagemCard>
                 </S.CardLandingPage>
                 <S.CardLandingPage>
                     <S.ImagemCard
-                        src={LandingPageHeader}
+                        src={GatoTres}
                         alt="imagem de livros em um notebook"
                     ></S.ImagemCard>
-                    <DivColumn>
-                        <h2>TROQUE</h2>
+                    <S.CardText>
+                        <S.Título>TROQUE</S.Título>
                         <p>
                             A troca de livros vai além de um simples gesto, é uma
                             experiência de descoberta e conexão. Encontre novas leituras
@@ -104,11 +106,11 @@ export const LandingPage = () => {
                             estante e, ao mesmo tempo, contribui para uma comunidade
                             literária vibrante e em constante crescimento!
                         </p>
-                    </DivColumn>
+                    </S.CardText>
                 </S.CardLandingPage>
             </section>
 
-            <section>AQUI VÃO OS CARDS DE AVALIAÇÕES</section>
+            <section></section>
 
             <section id="subscribe">
                 <DivRow>
