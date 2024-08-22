@@ -3,13 +3,12 @@ import styled from "styled-components";
 export const Body = styled.div`
     display: flex;
     flex-direction: Column;
-    width: 100%;
+    //    width: 100%;
     box-sizing: none;
     padding: none;
     margin: none;
-    max-width: 1920px;
+    //    max-width: 1920px;
     align-items: center;
-    font-size: 1rem;
     background: rgb(254, 252, 252);
     background: linear-gradient(
         0deg,
@@ -91,10 +90,6 @@ export const LoginLandingPage = styled.button`
 
 //COMEÇO DO ABOUT
 
-export const About = styled.section``;
-
-export const Paragraph = styled.p``;
-
 export const ImagemHeader = styled.img`
     width: 1000px;
     max-width: 3340px;
@@ -102,14 +97,66 @@ export const ImagemHeader = styled.img`
     object-fit: cover;
     position: relative;
 `;
+export const About = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+export const Título = styled.h2`
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: ${(props) => props.theme.fonts.Segunda};
+`;
+export const ParagraphAbout = styled.p`
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1010px;
+    font-size: 1.2rem;
+    font-family: ${(props) => props.theme.fonts.Principal};
+`;
+
 //COMEÇO FEATURES
+
+export const CardLandingPage = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+    padding: 2rem 3rem;
+    border: 1px solid red;
+    width: 1010px;
+    height: 300px;
+    border-radius: 10px;
+    gap: 2rem;
+    background-color: ${(props) => props.theme.colors.Branco};
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
+`;
 
 export const ImagemCard = styled.img``;
 
 //COMEÇO SUBSCRIBE
-
 export const ImagemSubscribe = styled.img`
     width: 25rem;
 `;
 
-export const CardLandingPage = styled.div``;
+export const SubscribeButton = styled.button`
+    background-color: ${(props) => props.theme.colors.VerdeEscuro};
+    color: ${(props) => props.theme.colors.Branco};
+    font-size: 60px;
+    height: 8rem;
+    padding: 0;
+    font-family: ${(props) => props.theme.fonts.Segunda};
+    width: 320px;
+    border: none;
+    &:hover {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
+        color: ${(props) => props.theme.colors.VerdeEscuro};
+    }
+`;
+export const CallForAction = styled.p`
+    font-family: ${(props) => props.theme.fonts.Terceira};
+    font-size: 40px;
+    margin-bottom: 0;
+    color: ${(props) => props.theme.colors.VerdeMedioUm};
+`;
