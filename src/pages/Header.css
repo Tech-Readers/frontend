@@ -1,0 +1,308 @@
+body{
+    margin: 0;
+    background-color: #FEFCFC ;
+}
+
+.container{
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    padding: 1px 20px;
+    background-color: #D7C4B6;
+    color: #686868;
+    border-bottom: 1px solid #D7C4B6;
+    position: fixed; /* Fixa o cabeçalho no topo da página */
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
+    top: 0; /* Garante que o cabeçalho esteja no topo */
+    left: 0; /* Garante que o cabeçalho esteja na borda esquerda */
+    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #D7C4B6;
+    color: #fff;
+    border-bottom: 1px solid #444;
+}
+  
+.logo {
+    width: 650px;
+    height: 50px;
+    top: -20px;
+    left: -12px;
+    align-items: flex-start;
+}
+
+.logo img{
+    width: 86px;
+    height: 61px;
+    top: 3px;
+    left: 43px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+
+}
+  
+.search {
+    flex: 1;
+    margin: 0 -100px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #686868;
+    background-color: #fff;
+    color: #fff;
+    width: 300px;
+}
+
+.placeholder{
+    width: 130%; /* Ocupa a largura disponível do contêiner pai */
+    max-width: 500px; /* Limita a largura máxima */
+    margin: 0 10px; /* Espaçamento lateral */
+    padding: 5px; /* Espaçamento interno */
+}
+
+.search {
+    width: 350px;
+    height: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #B7B7B7;
+    padding-left: 40px; /* Espaço para o ícone */
+    background: url('src/components/images/search icon.svg') no-repeat 10px center;
+    background-size: 24px 24px; /* Ajusta o tamanho da imagem de fundo */
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .search {
+    max-width: 80%; /* Ajusta a largura máxima em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .search {
+    max-width: 100%; /* Ajusta a largura máxima para preencher a tela em dispositivos menores */
+  }
+}
+  
+
+.nav {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os links */
+    flex: 5; /* Ocupa o espaço restante disponível */
+}
+  
+.nav img {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px; /* Ajusta a largura das imagens dos links */
+    height: 30px; /* Ajusta a altura das imagens dos links */
+    transition: opacity 0.3s; /* Adiciona transição suave para efeitos */ 
+}
+
+.chat{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+  
+  
+.nav img:hover .nav img {
+    opacity: 0.7; /* Reduz a opacidade ao passar o mouse */
+}
+  
+.profile {
+    display: flex;
+    align-items: flex-end;
+    gap: 1000px; /* Espaço entre a imagem de perfil e outros itens */
+    right: 9px;
+    
+}
+  
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    left:30px;
+    position: relative;
+}
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Alinha itens verticalmente em telas menores */
+      align-items: flex-start; /* Alinha itens ao topo da tela */
+      padding: 10px; /* Ajusta o padding */
+    }
+  
+    .nav {
+      flex-direction: row; /* Mantém os links em linha horizontal */
+      gap: 10px; /* Menos espaçamento entre os links */
+      width: 100%; /* Garante que o menu ocupe toda a largura disponível */
+      margin-top: 10px; /* Espaço acima do menu */
+    }
+  
+    .profile {
+      margin-top: 10px; /* Espaço acima da imagem de perfil */
+      width: 100%; /* Garante que a imagem de perfil ocupe toda a largura disponível */
+      justify-content: flex-start; /* Alinha a imagem de perfil ao início do container */
+    }
+  
+    .profile-img {
+      width: 30px; /* Reduz o tamanho da imagem de perfil */
+      height: 30px;
+    }
+  
+    .nav-icon {
+      width: 20px; /* Ajusta o tamanho das imagens dos links em telas menores */
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.2em; /* Reduz o tamanho da fonte em telas menores */
+    }
+  
+    .nav-icon {
+      width: 18px; /* Reduz ainda mais o tamanho das imagens dos links */
+      height: 18px;
+    }
+  
+    .profile-img {
+      width: 25px; /* Reduz ainda mais o tamanho da imagem de perfil */
+      height: 25px;
+    }
+  }
+
+main {
+    padding-top: 3; /* Remover padding negativo */
+    display: block; /* Mudar para block para que os elementos se alinhem verticalmente */
+    justify-content: center; 
+    align-items: center;
+    height: auto; /* Remover a altura fixa */
+}
+
+.container-banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 110px; /* Ajuste a distância do menu */
+}
+
+.banner {
+    max-width: 90%; 
+    height: auto; 
+    left: 20px;
+    position: relative;
+    top: 0; /* Remover a posição relativa negativa */
+    margin-bottom: 30px; /* Adicionar espaço abaixo do banner */
+}
+  
+  /* Responsividade */
+    @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav {
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .profile {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: flex-start;
+    }
+  
+    .profile-img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .nav-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.2em;
+    }
+  
+    .nav-icon {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .profile-img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+.book-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Estilos para o footer */
+.footer {
+    background-color: #D7C4B6; /* Cor de fundo do footer */
+    padding: 20px; /* Espaçamento interno */
+    border-top: 1px solid #ccc; /* Borda superior do footer */
+    color: #444;
+}
+
+/* Container para o conteúdo principal do footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre descrição e imagens */
+    align-items: flex-start; /* Alinha itens no início do container */
+    margin-bottom: 20px; /* Espaçamento abaixo do conteúdo principal */
+}
+
+/* Descrição */
+.description {
+    flex: 1; /* Faz com que a descrição ocupe o espaço disponível */
+    margin-right: 20px; /* Espaçamento à direita da descrição */
+}
+
+/* Container de imagens */
+.images {
+    display: flex;
+    flex-direction: column; /* Coloca as imagens uma embaixo da outra */
+    align-items: flex-end; /* Alinha as imagens à direita */
+}
+
+/* Imagem superior */
+.top-image {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 10px; /* Espaçamento entre as imagens */
+}
+
+/* Imagem inferior */
+.bottom-image {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Texto abaixo das imagens e da descrição */
+.footer-text {
+    text-align: center; /* Centraliza o texto */
+    font-size: 14px; /* Tamanho da fonte do texto */
+    color: #666; /* Cor do texto */
+}

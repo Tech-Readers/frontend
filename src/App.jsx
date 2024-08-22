@@ -1,13 +1,13 @@
-import { LandingPage } from './pages/LandingPage/LandingPage'
+import { Header } from './pages/Header'
 
 
-function App() {
+function Heade() {
 
   return (
     <>
-      <LandingPage/>
+      <Header/>
     </>
   )
 }
 
-export default App
+export default Heade
