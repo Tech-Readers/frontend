@@ -47,6 +47,7 @@ const MeusAnuncios = () => {
     }
   };
 
+  // atualizar anuncio
   const handleEditAd = (id) => {
     history.push(`/anuncios/atualizar/${id}`);
   };
