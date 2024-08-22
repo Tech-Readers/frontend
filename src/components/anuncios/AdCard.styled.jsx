@@ -1,7 +1,8 @@
+// src/components/anuncios/AdCard.styled.jsx:
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  background-color: ${({ theme, isSelected }) => (isSelected ? theme.colors.Branco : theme.colors.CinzaDois)};  // Branco se selecionado, cinza claro se não
+  background-color: ${({ theme, isSelected }) => (isSelected ? theme.colors.Branco : theme.colors.CinzaDois)};
   border: ${({ theme, isSelected }) => (isSelected ? `2px solid ${theme.colors.CinzaQuatro}` : `1px solid ${theme.colors.CinzaTres}`)};
   border-radius: 10px;
   padding: 20px;
@@ -16,12 +17,12 @@ export const ProfileCircle = styled.div`
   width: 86px;
   height: 86px;
   top: -43px;
-  left: ${({ isSelected }) => (isSelected ? '-43px' : '50%')};  
+  left: ${({ isSelected }) => (isSelected ? '-43px' : '50%')};
   transform: ${({ isSelected }) => (isSelected ? 'none' : 'translateX(-50%)')};  
   background-color: #D9D9D9;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid ${({ theme }) => theme.colors.Branco};  
+  border: 2px solid ${({ theme }) => theme.colors.Branco};
 
   img {
     width: 100%;
@@ -118,4 +119,7 @@ export const ToggleButton = styled.button`
     height: 24px;
   }
 `;
+
+
+
 

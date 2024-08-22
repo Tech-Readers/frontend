@@ -1,8 +1,10 @@
+// src/services/exchangeService.jsx:
 import api from './api';
 
-// obtem todos os anuncios
-export const getAllExchanges = async (token) => {
+// Obtem todos os anuncios
+export const getAllExchanges = async () => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.get('/exchanges', {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -16,8 +18,9 @@ export const getAllExchanges = async (token) => {
 };
 
 // Fecha (desativa) um anuncio especifico
-export const closeExchange = async (id, token) => {
+export const closeExchange = async (id) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.patch(`/exchanges/${id}/close`, {}, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -31,8 +34,9 @@ export const closeExchange = async (id, token) => {
 };
 
 // Obtem um anuncio especifico por ID
-export const getExchangeById = async (id, token) => {
+export const getExchangeById = async (id) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.get(`/exchanges/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -46,8 +50,11 @@ export const getExchangeById = async (id, token) => {
 };
 
 // Obtem todos os anuncios de um usuario especifico
-export const getExchangesByUserId = async (userId, token) => {
+export const getExchangesByUserId = async () => {
   try {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');  // Obtém o ID do usuário do localStorage
+
     const response = await api.get(`/exchanges/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -61,8 +68,9 @@ export const getExchangesByUserId = async (userId, token) => {
 };
 
 // Cria um novo anuncio
-export const createExchange = async (exchangeData, token) => {
+export const createExchange = async (exchangeData) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.post('/exchanges', exchangeData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -76,8 +84,9 @@ export const createExchange = async (exchangeData, token) => {
 };
 
 // Atualiza os dados de um anuncio especifico
-export const updateExchange = async (id, exchangeData, token) => {
+export const updateExchange = async (id, exchangeData) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.put(`/exchanges/${id}`, exchangeData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -91,8 +100,9 @@ export const updateExchange = async (id, exchangeData, token) => {
 };
 
 // Deleta um anuncio especifico
-export const deleteExchange = async (id, token) => {
+export const deleteExchange = async (id) => {
   try {
+    const token = localStorage.getItem('token');
     const response = await api.delete(`/exchanges/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -104,5 +114,7 @@ export const deleteExchange = async (id, token) => {
     throw error;
   }
 };
+
+
 
 

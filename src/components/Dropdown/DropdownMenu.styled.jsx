@@ -1,3 +1,4 @@
+//// src/components/Dropdown/DropdownMenu.styled.jsx:
 import styled from 'styled-components';
 
 export const MenuContainer = styled.div`
@@ -32,3 +33,6 @@ export const MenuItem = styled.a`
     background-color: ${({ theme }) => theme.colors.VerdeMedioDois};
   }
 `;
+
+
+

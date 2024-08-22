@@ -1,3 +1,4 @@
+// src/components/Dropdown/DropdownMenu.jsx:
 import React, { useState } from 'react';
 import { MenuContainer, MenuButton, MenuList, MenuItem } from './DropdownMenu.styled';
 import profileImg from '../../assets/profile.svg';
@@ -26,3 +27,6 @@ const DropdownMenu = () => {
 };
 
 export default DropdownMenu;
+
+
+

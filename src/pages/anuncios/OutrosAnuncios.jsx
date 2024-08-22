@@ -1,21 +1,20 @@
-// src/pages/anuncios/AtualizarAnuncio.jsx:
-// src/pages/anuncios/MeusAnuncios.jsx
+// src/pages/anuncios/OutrosAnuncios.jsx
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { getExchangesByUserId, deleteExchange, closeExchange } from '../../services/exchangeService';
+import { useParams } from 'react-router-dom';
+import { getExchangesByUserId } from '../../services/exchangeService';
 import AdCard from '../../components/anuncios/AdCard';
 import Footer from '../../components/footer/footer';
-import { Container, AdsContainer, Header } from './MeusAnuncios.styled';
+import { Container, AdsContainer, Header } from './OtherUserAdCard.styled';
 
-const MeusAnuncios = () => {
+const OutrosAnuncios = () => {
   const [ads, setAds] = useState([]);
   const [selectedAd, setSelectedAd] = useState(null);
-  const history = useHistory();
+  const { id: userId } = useParams();
 
   useEffect(() => {
     const fetchAds = async () => {
       try {
-        const userAds = await getExchangesByUserId();
+        const userAds = await getExchangesByUserId(userId);
         setAds(userAds);
       } catch (error) {
         console.error('Erro ao carregar os anúncios:', error);
@@ -23,39 +22,20 @@ const MeusAnuncios = () => {
     };
 
     fetchAds();
-  }, []);
+  }, [userId]);
 
   const handleSelectAd = (ad) => {
     setSelectedAd(ad);
   };
 
-  const handleDeleteAd = async (id) => {
-    try {
-      await deleteExchange(id);
-      setAds(ads.filter(ad => ad.id !== id));
-      setSelectedAd(null);  // Limpa a seleção se o anúncio selecionado for excluído
-    } catch (error) {
-      console.error('Erro ao excluir o anúncio:', error);
-    }
-  };
-
-  const handleToggleAd = async (id) => {
-    try {
-      await closeExchange(id);
-      setSelectedAd(prev => ({ ...prev, ativo: false }));  // Marca o anúncio como inativo
-    } catch (error) {
-      console.error('Erro ao desativar o anúncio:', error);
-    }
-  };
-
-  const handleEditAd = (id) => {
-    history.push(`/anuncios/atualizar/${id}`);
+  const handleSendMessage = () => {
+    // Implementar a lógica para enviar mensagem --> chamar a tela que a Fran implementou
   };
 
   return (
     <Container>
       <Header>
-        <h1>Meus Anúncios</h1>
+        <h1>Anúncios de Outro Usuário</h1>
       </Header>
 
       {selectedAd && (
@@ -70,10 +50,9 @@ const MeusAnuncios = () => {
           bookImageUrl={selectedAd.bookImageUrl}
           isSelected={true}
           onSelect={() => setSelectedAd(null)}
-          onToggle={() => handleToggleAd(selectedAd.id)}
-          onEdit={() => handleEditAd(selectedAd.id)}
-          onDelete={() => handleDeleteAd(selectedAd.id)}
+          onSendMessage={handleSendMessage}
           isActive={selectedAd.ativo}
+          canSendMessage={true}
         />
       )}
 
@@ -92,8 +71,8 @@ const MeusAnuncios = () => {
               bookImageUrl={ad.bookImageUrl}
               isSelected={false}
               onSelect={() => handleSelectAd(ad)}
-              onToggle={() => handleToggleAd(ad.id)}
               isActive={ad.ativo}
+              canSendMessage={false}
             />
           ))}
       </AdsContainer>
@@ -102,4 +81,4 @@ const MeusAnuncios = () => {
   );
 };
 
-export default MeusAnuncios;
+export default OutrosAnuncios;
