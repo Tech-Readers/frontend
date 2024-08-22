@@ -28,6 +28,7 @@ const MeusAnuncios = () => {
     setSelectedAd(ad);
   };
 
+  // excluir anuncio
   const handleDeleteAd = async (id) => {
     try {
       await deleteExchange(id);
@@ -38,6 +39,7 @@ const MeusAnuncios = () => {
     }
   };
 
+  // fechar anuncio
   const handleToggleAd = async (id) => {
     try {
       await closeExchange(id);
