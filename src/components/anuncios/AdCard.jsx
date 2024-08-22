@@ -1,5 +1,4 @@
 // src/components/anuncios/AdCard/jsx:
-// src/components/anuncios/AdCard.jsx
 import React from 'react';
 import { Card, ProfileCircle, AdImage, AdDetails, AdTitle, AdInfo, AdDescription, ButtonGroup, Button, ToggleButton } from './AdCard.styled';
 import trashIcon from '../../assets/trash-icon.svg';
@@ -39,3 +38,4 @@ const AdCard = ({ id, title, genre, author, description, isSelected, onSelect, o
 };
 
 export default AdCard;
+
