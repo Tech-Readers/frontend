@@ -1,11 +1,10 @@
-import React from 'react';
-import { Chat } from '../../components/Chat/Chat';
+import React from "react";
+import { Chat } from "../../components/Chat/Chat";
 
-export const LandingPage = () => {
-   
+export const ChatPage = () => {
     return (
-    <>
-        <Chat/>
-    </>
-)
-}
+        <>
+            <Chat />
+        </>
+    );
+};

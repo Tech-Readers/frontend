@@ -1,10 +1,10 @@
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { ThemeProvider } from "styled-components";
-import Chat from "./components/Chat/Chat.jsx";
+import ChatPage from "./pages/Chat/ChatPage";
 
 function App() {
     //<VisualizarAnuncio />
-    //<Chat />
+    //<ChatPage />
     return (
         <>
             <LandingPage />;
