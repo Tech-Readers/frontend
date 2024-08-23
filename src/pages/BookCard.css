@@ -55,15 +55,15 @@
 /* Container para a foto de perfil */
 .profile-pic-container {
     display: flex;
-    justify-content: center; /* Centraliza a foto horizontalmente */
-    margin-bottom: 16px; /* Espaçamento abaixo da foto de perfil */
+    justify-content: center; 
+    margin-bottom: 16px;
 }
 
 /* Estilo para a foto de perfil */
 .profile-pic {
-    width: 80px; /* Ajuste conforme necessário */
-    height: 80px; /* Ajuste conforme necessário */
-    border-radius: 50%; /* Faz com que a imagem fique em forma de elipse */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    border: 3px solid #ddd; /* Borda opcional para a foto de perfil */
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #ddd;
 }

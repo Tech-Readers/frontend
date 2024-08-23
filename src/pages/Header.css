@@ -5,17 +5,17 @@ body{
 
 .container{
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente no centro */
-    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: center; 
+    justify-content: space-between; 
     padding: 1px 20px;
     background-color: #D7C4B6;
     color: #686868;
     border-bottom: 1px solid #D7C4B6;
-    position: fixed; /* Fixa o cabeçalho no topo da página */
-    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
-    top: 0; /* Garante que o cabeçalho esteja no topo */
-    left: 0; /* Garante que o cabeçalho esteja na borda esquerda */
-    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+    position: fixed;
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
 }
 
 .header {
@@ -59,10 +59,10 @@ body{
 }
 
 .placeholder{
-    width: 130%; /* Ocupa a largura disponível do contêiner pai */
-    max-width: 500px; /* Limita a largura máxima */
-    margin: 0 10px; /* Espaçamento lateral */
-    padding: 5px; /* Espaçamento interno */
+    width: 130%; 
+    max-width: 500px; 
+    margin: 0 10px; 
+    padding: 5px;
 }
 
 .search {
@@ -71,38 +71,38 @@ body{
     font-size: 16px;
     border-radius: 10px;
     border: 1px solid #B7B7B7;
-    padding-left: 40px; /* Espaço para o ícone */
+    padding-left: 40px;
     background: url('src/components/images/search icon.svg') no-repeat 10px center;
-    background-size: 24px 24px; /* Ajusta o tamanho da imagem de fundo */
+    background-size: 24px 24px; 
     background-color: #fff;
 }
 
 @media (max-width: 768px) {
   .search {
-    max-width: 80%; /* Ajusta a largura máxima em telas menores */
+    max-width: 80%; 
   }
 }
 
 @media (max-width: 480px) {
   .search {
-    max-width: 100%; /* Ajusta a largura máxima para preencher a tela em dispositivos menores */
+    max-width: 100%; 
   }
 }
   
 
 .nav {
     display: flex;
-    gap: 10px; /* Espaçamento entre os links */
-    flex: 5; /* Ocupa o espaço restante disponível */
+    gap: 10px; 
+    flex: 5; 
 }
   
 .nav img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80px; /* Ajusta a largura das imagens dos links */
-    height: 30px; /* Ajusta a altura das imagens dos links */
-    transition: opacity 0.3s; /* Adiciona transição suave para efeitos */ 
+    width: 80px; 
+    height: 30px; 
+    transition: opacity 0.3s; 
 }
 
 .chat{
@@ -113,13 +113,13 @@ body{
   
   
 .nav img:hover .nav img {
-    opacity: 0.7; /* Reduz a opacidade ao passar o mouse */
+    opacity: 0.7; 
 }
   
 .profile {
     display: flex;
     align-items: flex-end;
-    gap: 1000px; /* Espaço entre a imagem de perfil e outros itens */
+    gap: 1000px;
     right: 9px;
     
 }
@@ -136,63 +136,63 @@ body{
   /* Responsividade */
   @media (max-width: 768px) {
     .header {
-      flex-direction: column; /* Alinha itens verticalmente em telas menores */
-      align-items: flex-start; /* Alinha itens ao topo da tela */
-      padding: 10px; /* Ajusta o padding */
+      flex-direction: column; 
+      align-items: flex-start; 
+      padding: 10px; 
     }
   
     .nav {
-      flex-direction: row; /* Mantém os links em linha horizontal */
-      gap: 10px; /* Menos espaçamento entre os links */
-      width: 100%; /* Garante que o menu ocupe toda a largura disponível */
-      margin-top: 10px; /* Espaço acima do menu */
+      flex-direction: row; 
+      gap: 10px; 
+      width: 100%; 
+      margin-top: 10px; 
     }
   
     .profile {
-      margin-top: 10px; /* Espaço acima da imagem de perfil */
-      width: 100%; /* Garante que a imagem de perfil ocupe toda a largura disponível */
-      justify-content: flex-start; /* Alinha a imagem de perfil ao início do container */
+      margin-top: 10px; 
+      width: 100%; 
+      justify-content: flex-start; 
     }
   
     .profile-img {
-      width: 30px; /* Reduz o tamanho da imagem de perfil */
+      width: 30px; 
       height: 30px;
     }
   
     .nav-icon {
-      width: 20px; /* Ajusta o tamanho das imagens dos links em telas menores */
+      width: 20px; 
       height: 20px;
     }
   }
   
   @media (max-width: 480px) {
     .logo {
-      font-size: 1.2em; /* Reduz o tamanho da fonte em telas menores */
+      font-size: 1.2em; 
     }
   
     .nav-icon {
-      width: 18px; /* Reduz ainda mais o tamanho das imagens dos links */
+      width: 18px; 
       height: 18px;
     }
   
     .profile-img {
-      width: 25px; /* Reduz ainda mais o tamanho da imagem de perfil */
+      width: 25px; 
       height: 25px;
     }
   }
 
 main {
-    padding-top: 3; /* Remover padding negativo */
-    display: block; /* Mudar para block para que os elementos se alinhem verticalmente */
+    padding-top: 3; 
+    display: block; 
     justify-content: center; 
     align-items: center;
-    height: auto; /* Remover a altura fixa */
+    height: auto; 
 }
 
 .container-banner {
     display: flex;
     justify-content: center;
-    margin-top: 110px; /* Ajuste a distância do menu */
+    margin-top: 110px; 
 }
 
 .banner {
@@ -200,8 +200,8 @@ main {
     height: auto; 
     left: 20px;
     position: relative;
-    top: 0; /* Remover a posição relativa negativa */
-    margin-bottom: 30px; /* Adicionar espaço abaixo do banner */
+    top: 0; 
+    margin-bottom: 30px; 
 }
   
   /* Responsividade */
@@ -260,49 +260,49 @@ main {
 
 /* Estilos para o footer */
 .footer {
-    background-color: #D7C4B6; /* Cor de fundo do footer */
-    padding: 20px; /* Espaçamento interno */
-    border-top: 1px solid #ccc; /* Borda superior do footer */
+    background-color: #D7C4B6; 
+    padding: 20px; 
+    border-top: 1px solid #ccc; 
     color: #444;
 }
 
 /* Container para o conteúdo principal do footer */
 .footer-content {
     display: flex;
-    justify-content: space-between; /* Distribui espaço entre descrição e imagens */
-    align-items: flex-start; /* Alinha itens no início do container */
-    margin-bottom: 20px; /* Espaçamento abaixo do conteúdo principal */
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-bottom: 20px; 
 }
 
 /* Descrição */
 .description {
-    flex: 1; /* Faz com que a descrição ocupe o espaço disponível */
-    margin-right: 20px; /* Espaçamento à direita da descrição */
+    flex: 1; 
+    margin-right: 20px; 
 }
 
 /* Container de imagens */
 .images {
     display: flex;
-    flex-direction: column; /* Coloca as imagens uma embaixo da outra */
-    align-items: flex-end; /* Alinha as imagens à direita */
+    flex-direction: column; 
+    align-items: flex-end; 
 }
 
 /* Imagem superior */
 .top-image {
-    width: 100px; /* Ajuste conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 10px; /* Espaçamento entre as imagens */
+    width: 100px; 
+    height: auto; 
+    margin-bottom: 10px; 
 }
 
 /* Imagem inferior */
 .bottom-image {
-    width: 100px; /* Ajuste conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 100px; 
+    height: auto; 
 }
 
 /* Texto abaixo das imagens e da descrição */
 .footer-text {
-    text-align: center; /* Centraliza o texto */
-    font-size: 14px; /* Tamanho da fonte do texto */
-    color: #666; /* Cor do texto */
+    text-align: center; 
+    font-size: 14px; 
+    color: #666; 
 }

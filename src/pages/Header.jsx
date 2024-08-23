@@ -68,7 +68,7 @@ export const Header = () => {
             genre: 'Gênero 2',
             description: 'Etiam eget ligula eu lectus lobortis condimentum.'
           },
-        // Adicione mais livros aqui
+        // Adicionar mais livros aqui
       ];
 
   return (
