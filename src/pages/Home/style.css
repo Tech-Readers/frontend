@@ -1,20 +1,19 @@
-body{
+body {
     margin: 0;
-    background-color: #FEFCFC ;
 }
 
-.container{
+.container {
     display: flex;
-    align-items: center; 
-    justify-content: space-between; 
+    align-items: center;
+    justify-content: space-between;
     padding: 1px 20px;
-    background-color: #D7C4B6;
+    background-color: #d7c4b6;
     color: #686868;
-    border-bottom: 1px solid #D7C4B6;
+    border-bottom: 1px solid #d7c4b6;
     position: fixed;
-    width: 100%; 
-    top: 0; 
-    left: 0; 
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -23,14 +22,14 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #D7C4B6;
+    background-color: #d7c4b6;
 }
-  
+
 .logo img {
     max-width: 100px; /* Ajusta o tamanho da logo */
 }
 
-.logo img{
+.logo img {
     width: 86px;
     height: 61px;
     top: 3px;
@@ -38,9 +37,8 @@ body{
     gap: 0px;
     opacity: 0px;
     position: absolute;
-
 }
-  
+
 .search {
     width: 100%;
     max-width: 400px;
@@ -48,7 +46,7 @@ body{
     border-radius: 5px;
     border: 1px solid #ccc;
     color: #000;
-  }
+}
 
 .placeholder {
     flex-grow: 1;
@@ -60,158 +58,156 @@ body{
     height: 15px;
     font-size: 16px;
     border-radius: 10px;
-    border: 1px solid #B7B7B7;
+    border: 1px solid #b7b7b7;
     padding-left: 40px;
-    background: url('src/components/images/search icon.svg') no-repeat 10px center;
-    background-size: 24px 24px; 
+    background: url("src/components/images/search icon.svg") no-repeat 10px center;
+    background-size: 24px 24px;
     background-color: #fff;
     margin-left: 300px;
 }
 
 @media (max-width: 768px) {
-  .search {
-    max-width: 80%; 
-  }
+    .search {
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 480px) {
-  .search {
-    max-width: 100%; 
-  }
+    .search {
+        max-width: 100%;
+    }
 }
 
 .nav {
     display: flex;
     gap: 15px; /* Espaçamento entre os ícones */
     margin-left: 200px; /* Empurra a nav para a direita */
-
 }
 
 .nav a img {
     width: 70px;
     height: 50px;
 }
-  
+
 .nav img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100px; 
-    height: 50px; 
-    transition: opacity 0.3s; 
+    width: 100px;
+    height: 50px;
+    transition: opacity 0.3s;
 }
 
-.card{
+.card {
     width: 30px;
     height: 20px;
 }
-  
+
 .profile img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-} 
+}
 
-  
 .profile-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 2px solid #fff;
-    left:30px;
+    left: 30px;
     position: relative;
 }
-  
- /* Responsividade */
+
+/* Responsividade */
 @media (max-width: 768px) {
     .header {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     .placeholder {
-      width: 100%;
-      margin: 10px 0;
+        width: 100%;
+        margin: 10px 0;
     }
-  
+
     .nav {
-      justify-content: space-between;
-      width: 100%;
+        justify-content: space-between;
+        width: 100%;
     }
-  
+
     .profile {
-      margin-top: 10px;
+        margin-top: 10px;
     }
 }
 
 main {
-    padding-top: 3; 
-    display: block; 
-    justify-content: center; 
+    padding-top: 3;
+    display: block;
+    justify-content: center;
     align-items: center;
-    height: auto; 
+    height: auto;
 }
 
 .container-banner {
     display: flex;
     justify-content: center;
-    margin-top: 110px; 
+    margin-top: 110px;
 }
 
 .banner {
-    max-width: 90%; 
-    height: auto; 
+    max-width: 90%;
+    height: auto;
     left: 20px;
     position: relative;
-    top: 0; 
-    margin-bottom: 30px; 
+    top: 0;
+    margin-bottom: 30px;
 }
-  
-  /* Responsividade */
-    @media (max-width: 768px) {
+
+/* Responsividade */
+@media (max-width: 768px) {
     header {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     .nav {
-      gap: 10px;
-      width: 100%;
-      margin-top: 10px;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
     }
-  
+
     .profile {
-      margin-top: 10px;
-      width: 100%;
-      justify-content: flex-start;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
     }
-  
+
     .profile-img {
-      width: 30px;
-      height: 30px;
+        width: 30px;
+        height: 30px;
     }
-  
+
     .nav-icon {
-      width: 20px;
-      height: 20px;
+        width: 20px;
+        height: 20px;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .logo {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
-  
+
     .nav-icon {
-      width: 18px;
-      height: 18px;
+        width: 18px;
+        height: 18px;
     }
-  
+
     .profile-img {
-      width: 25px;
-      height: 25px;
+        width: 25px;
+        height: 25px;
     }
-  }
+}
 
 .book-cards-container {
     display: flex;
@@ -223,49 +219,49 @@ main {
 
 /* Estilos para o footer */
 .footer {
-    background-color: #D7C4B6; 
-    padding: 20px; 
-    border-top: 1px solid #ccc; 
+    background-color: #d7c4b6;
+    padding: 20px;
+    border-top: 1px solid #ccc;
     color: #444;
 }
 
 /* Container para o conteúdo principal do footer */
 .footer-content {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
-    margin-bottom: 20px; 
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 /* Descrição */
 .description {
-    flex: 1; 
-    margin-right: 20px; 
+    flex: 1;
+    margin-right: 20px;
 }
 
 /* Container de imagens */
 .images {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-end; 
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 /* Imagem superior */
 .top-image {
-    width: 100px; 
-    height: auto; 
-    margin-bottom: 10px; 
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 /* Imagem inferior */
 .bottom-image {
-    width: 100px; 
-    height: auto; 
+    width: 100px;
+    height: auto;
 }
 
 /* Texto abaixo das imagens e da descrição */
 .footer-text {
-    text-align: center; 
-    font-size: 14px; 
-    color: #666; 
+    text-align: center;
+    font-size: 14px;
+    color: #666;
 }

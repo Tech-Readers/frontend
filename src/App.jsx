@@ -1,15 +1,10 @@
-import { LandingPage } from "./pages/LandingPage/LandingPage";
-//import { ThemeProvider } from "styled-components";
-//import ChatPage from "./pages/Chat/ChatPage.jsx";
-//import { Header } from "./pages/Header";
+import AppRoutes from "./Routes";
+import "./index.css";
 
 function App() {
-    //<VisualizarAnuncio />
-    //<ChatPage />
-    //<Header/>
     return (
         <>
-            <LandingPage />;
+            <AppRoutes />
         </>
     );
 }

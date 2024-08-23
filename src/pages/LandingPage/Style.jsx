@@ -1,4 +1,3 @@
-import { Translate } from "@mui/icons-material";
 import styled from "styled-components";
 
 export const Body = styled.div`
@@ -19,18 +18,7 @@ export const Body = styled.div`
         rgba(178, 214, 183, 1) 100%
     );
 `;
-export const DivRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin: none;
-    padding: none;
-`;
-export const DivColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: none;
-    padding: none;
-`;
+
 //COMEÇO NAVBAR
 
 export const ImagemLogo = styled.img`
@@ -122,10 +110,12 @@ export const About = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 6rem;
 `;
 export const Título = styled.h2`
     font-size: 3rem;
     margin-bottom: 10px;
+    color: ${(props) => props.theme.colors.VerdeMedioUm};
     font-family: ${(props) => props.theme.fonts.Segunda};
 `;
 export const ParagraphAbout = styled.p`
@@ -142,6 +132,8 @@ export const ParagraphAbout = styled.p`
 
 export const CardLandingPage = styled.div`
     display: flex;
+
+    text-align: center;
     flex-direction: row;
     margin: 20px 0px;
     padding: 2rem 3rem;
@@ -163,7 +155,9 @@ export const CardText = styled.div`
     margin: none;
     padding: none;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    color: ${(props) => props.theme.colors.Preto};
     font-family: ${(props) => props.theme.fonts.Principal};
 `;
 
@@ -224,12 +218,4 @@ export const CallForAction = styled.p`
     font-size: 40px;
     margin-bottom: 0;
     color: ${(props) => props.theme.colors.VerdeMedioUm};
-`;
-// FOOTER
-
-export const Footer = styled.footer`
-    background-color: ${(props) => props.theme.colors.BegeUm};
-    width: 100%;
-    height: 15rem;
-    margin-top: 80px;
 `;

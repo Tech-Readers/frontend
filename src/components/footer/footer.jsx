@@ -1,6 +1,7 @@
 // src/components/footer/footer.jsx:
 import React from "react";
-import { DivColumn, DivRow, FooterContainer, FooterText } from "./Style";
+import { DivColumn } from "../../AppStyle";
+import { FooterContainer, FooterText } from "./Style";
 
 const Footer = () => {
     return (

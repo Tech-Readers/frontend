@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./Style";
+import { DivColumn, DivRow } from "../../AppStyle";
 import Logomarca from "/src/assets/TECH-READER-copiar.svg";
 import ReadingCat from "../../assets/book.svg";
 import LandingPageHeader from "/src/assets/Landing-page.svg";
@@ -10,8 +11,18 @@ import GatoTres from "../../assets/gifts.svg";
 import ProfileCard from "../../components/Chat/ProfileCard";
 import "../../index.css";
 import Footer from "../../components/footer/footer";
+import { useNavigate } from "react-router-dom";
 
 export const LandingPage = () => {
+    const navigate = useNavigate();
+
+    const handleSubscribeClick = () => {
+        navigate("/rota-desejada");
+    };
+    const handleLogin = () => {
+        navigate("/rota-desejada");
+    };
+
     return (
         <S.Body>
             <S.Navigation>
@@ -27,10 +38,12 @@ export const LandingPage = () => {
                         <S.Link href="#Avaliacoes">Avaliações</S.Link>
                     </S.LinkNavBar>
                     <S.LinkNavBar>
-                        <S.Subscribe>Inscreva-se</S.Subscribe>
+                        <S.Subscribe onClick={handleSubscribeClick}>
+                            Inscreva-se
+                        </S.Subscribe>
                     </S.LinkNavBar>
                     <S.LinkNavBar>
-                        <S.LoginLandingPage>
+                        <S.LoginLandingPage onClick={handleLogin}>
                             Login <LoginIcon />
                         </S.LoginLandingPage>
                     </S.LinkNavBar>
@@ -104,8 +117,8 @@ export const LandingPage = () => {
             </section>
 
             <S.SectionAvaliacoes id="Avaliacoes">
-                <S.DivColumn>
-                    <S.DivRow>
+                <DivColumn>
+                    <DivRow>
                         <ProfileCard
                             style={S.customStyleUm}
                             name=""
@@ -116,7 +129,7 @@ export const LandingPage = () => {
                             name=""
                             photoUrl="ligeirinho.jpg"
                         />
-                    </S.DivRow>
+                    </DivRow>
                     <S.CardAvaliacoes>
                         <S.CardText>
                             Acabei de descobrir o Tech Reader e estou completamente
@@ -124,9 +137,9 @@ export const LandingPage = () => {
                             você.
                         </S.CardText>
                     </S.CardAvaliacoes>
-                </S.DivColumn>
-                <S.DivColumn>
-                    <S.DivRow>
+                </DivColumn>
+                <DivColumn>
+                    <DivRow>
                         <ProfileCard
                             style={S.customStyleUm}
                             name=""
@@ -137,7 +150,7 @@ export const LandingPage = () => {
                             name=""
                             photoUrl="ligeirinho.jpg"
                         />
-                    </S.DivRow>
+                    </DivRow>
                     <S.CardAvaliacoes>
                         <S.CardText>
                             Se você é um amante de livros, não pode deixar de conhecer o
@@ -145,20 +158,22 @@ export const LandingPage = () => {
                             trocar e explorar novas leituras.
                         </S.CardText>
                     </S.CardAvaliacoes>
-                </S.DivColumn>
+                </DivColumn>
             </S.SectionAvaliacoes>
 
             <section id="subscribe">
-                <S.DivRow style={{ alignItems: "flex-end", gap: "40px" }}>
+                <DivRow style={{ alignItems: "flex-end", gap: "40px" }}>
                     <S.ImagemSubscribe
                         src={ReadingCat}
                         alt="imagem de livros em um notebook"
                     />
-                    <S.DivColumn>
+                    <DivColumn>
                         <S.CallForAction>Entre na comunidade</S.CallForAction>
-                        <S.SubscribeButton>LEIA!</S.SubscribeButton>
-                    </S.DivColumn>
-                </S.DivRow>
+                        <S.SubscribeButton onClick={handleSubscribeClick}>
+                            LEIA!
+                        </S.SubscribeButton>
+                    </DivColumn>
+                </DivRow>
             </section>
 
             <Footer>
