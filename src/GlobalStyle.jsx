@@ -16,6 +16,7 @@ export const Theme = {
         CinzaTres: '#D9D9D9',
         CinzaQuatro: '#CCC8C8',
         CinzaCinco: '#8B8B8B',
+        CinzaSeis: '#686868'
     },
     fonts:{
        Principal: 'Inter',

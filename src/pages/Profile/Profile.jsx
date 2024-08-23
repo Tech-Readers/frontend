@@ -1,6 +1,8 @@
 import React from 'react';
-import { Body, ImagemLogo, Navigation, ListStyle, LoginContainer, ProfilePic, UserInfo, AdSection, AdCard, Footer } from './Style';
+import { Body, ImagemLogo, Navigation, ListStyle, ProfileNavegation, LoginContainer, ProfilePic, UserInfo, AdSection, AdCard, ProfileAnuncio, Footer } from './Style';
 import Logomarca from "/src/assets/TECH-READER-copiar.svg";
+import ImagemPerfil from '/src/assets/perfil.jpeg'; // remover (colocado apenas para teste)
+import Livro from '/src/assets/livro.png' // remover (colocado apenas para teste)
 
 export const Profile = () => {
   return (
@@ -12,16 +14,21 @@ export const Profile = () => {
           <li><a href="#meus-anuncios">Meus Anúncios</a></li>
           <li><a href="#avaliacoes">Avaliações</a></li>
         </ListStyle>
+        <ProfileNavegation src={ImagemPerfil} alt="Perfil" />
       </Navigation>
       
       <LoginContainer>
         <ProfilePic>
-          <img src="profile-placeholder.png" alt="Profile" />
+          <img src={ImagemPerfil} alt="Profile" />
         </ProfilePic>
         <UserInfo>
-          <h1>NOME PESSOA</h1>
-          <button>Editar Perfil</button>
-          <p>BIO</p>
+          <div>
+            <h1>NOME PESSOA</h1>
+            <button>Editar Perfil</button>
+          </div>
+          <div className="bio">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ad eveniet quia, voluptatum sit amet perspiciatis voluptatibus pariatur nisi. Consequatur dignissimos ea consectetur doloribus. Nostrum quia dolore consequatur in esse?</p>
+            </div>
         </UserInfo>
       </LoginContainer>
 
@@ -29,10 +36,13 @@ export const Profile = () => {
         <h2>MEUS ANÚNCIOS</h2>
         <div>
           <AdCard>
-            <img src="ad-placeholder.png" alt="Anúncio" />
+            <ProfileAnuncio>
+              <img src={ImagemPerfil} alt="perfil" />
+            </ProfileAnuncio>
+            <img src={Livro} alt="Anúncio" />
             <h3>Título Livro</h3>
             <p>Gênero | Autor</p>
-            <p>Descrição do anúncio</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellendus accusamus reiciendis commodi reprehenderit tempora quos explicabo. Repellat adipisci tenetur veritatis enim distinctio minima nostrum debitis! Accusamus iste aliquid accusantium.</p>
           </AdCard>
         </div>
       </AdSection>
@@ -41,10 +51,16 @@ export const Profile = () => {
         <h2>MEUS ANÚNCIOS AVALIADOS</h2>
         <div>
           <AdCard>
-            <img src="ad-placeholder.png" alt="Anúncio Avaliado" />
+          <ProfileAnuncio style={{ left: '15px' }}>
+              <img src={ImagemPerfil} alt="perfil" />
+            </ProfileAnuncio>
+            <ProfileAnuncio style={{ left: '-15px', top: '-12px'}}>
+              <img src={ImagemPerfil} alt="perfil" />
+            </ProfileAnuncio>
+            <img src={Livro} alt="Anúncio Avaliado" />
             <h3>Título Livro</h3>
             <p>Gênero | Autor</p>
-            <p>Descrição do anúncio</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam optio amet sint quibusdam, eius natus? Ipsam, nulla veritatis ipsum molestiae odio obcaecati corporis. Porro rem placeat repellat dolore ipsam voluptas!</p>
             <div>★★★★★</div>
           </AdCard>
         </div>
@@ -52,7 +68,11 @@ export const Profile = () => {
 
       <Footer>
         <div>Lorem ipsum dolor sit amet...</div>
-        <div>Links</div>
+        <div>
+          <p>link</p>
+          <p>link</p>
+          <p>link</p>
+        </div>
       </Footer>
     </Body>
   );

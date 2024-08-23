@@ -9,7 +9,7 @@ export const Body = styled.div`
     margin: 0;
     align-items: center;
     font-size: 1rem;
-    background-color: #FFFFFF;
+    background-color: ${(props) => props.theme.colors.Branco};
     min-height: 100vh;
 `;
 
@@ -39,37 +39,46 @@ export const ListStyle = styled.ul`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    margin-left: 20rem;
+    margin-left: 10rem;
 
     li {
-      list-style: none;
-      margin: 0 1rem;
+        list-style: none;
+        margin: 0 1rem;
 
-      a {
-        color: ${(props) => props.theme.colors.VerdeEscuro};
-        text-decoration: none;
-        font-weight: bold;
-      }
+        a {
+            color: ${(props) => props.theme.colors.CinzaSeis};
+            text-decoration: none;
+        }
     }
 `;
 
+export const ProfileNavegation = styled.img`
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 2px;
+    }
+`
+
 export const LoginContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     margin-top: 6rem;
     padding: 2rem;
-    background-color: ${(props) => props.theme.colors.BegeDois};
+    background-color: ${(props) => props.theme.colors.CinzaUm};
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    align-items: center; /* Centralizar conteúdo verticalmente */
+    flex-direction: row; /* Coloca os elementos em linha */
 `;
 
 export const ProfilePic = styled.div`
-    width: 150px;
-    height: 150px;
+    width: 16rem;
+    height: 16rem;
     border-radius: 50%;
     overflow: hidden;
+    margin-right: 2rem; /* Adiciona espaço à direita da imagem */
     img {
         width: 100%;
         height: 100%;
@@ -78,29 +87,37 @@ export const ProfilePic = styled.div`
 
 export const UserInfo = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: 4.6rem; 
+    
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
 
     h1 {
         margin: 0;
-        font-size: 1.5rem;
-        color: ${(props) => props.theme.colors.VerdeEscuro};
+        font-size: 1.25rem;
+        color: ${(props) => props.theme.colors.Preto};
     }
 
     button {
-        margin: 1rem 0;
-        padding: 0.5rem 1rem;
-        background-color: ${(props) => props.theme.colors.VerdeEscuro};
-        color: white;
-        border: none;
-        border-radius: 4px;
+        margin: 1.5rem 0;
+        padding: 0.7rem 1.5rem;
+        background-color: ${(props) => props.theme.colors.CinzaUm};
+        color: color: ${(props) => props.theme.colors.Preto};
+        border: 1px solid black;
+        border-radius: 10px;
         cursor: pointer;
+        font-size: 1rem;
     }
 
-    p {
-        font-size: 1rem;
-        color: grey;
+    .bio{
+        width: 30rem;
+        margin: 3rem;
+        font-size: 1.2rem;
     }
 `;
 
@@ -111,7 +128,7 @@ export const AdSection = styled.section`
     h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        color: ${(props) => props.theme.colors.VerdeEscuro};
+        color: ${(props) => props.theme.colors.Preto};
     }
 
     div {
@@ -121,22 +138,28 @@ export const AdSection = styled.section`
 `;
 
 export const AdCard = styled.div`
-    width: 23%;
-    background-color: ${(props) => props.theme.colors.BegeUm};
+    width: 18.75rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${(props) => props.theme.colors.CinzaDois};
+    margin-top: 60px;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     img {
-        width: 100%;
+        width: 15.06rem;
+        height: 15.06rem;
         border-radius: 4px;
         margin-bottom: 1rem;
     }
 
     h3 {
-        font-size: 1rem;
+        font-size: 1.12rem;
         margin: 0.5rem 0;
-        color: ${(props) => props.theme.colors.VerdeEscuro};
+        color: ${(props) => props.theme.colors.Preto};
     }
 
     p {
@@ -151,6 +174,21 @@ export const AdCard = styled.div`
     }
 `;
 
+export const ProfileAnuncio = styled.div`
+    position: relative;
+
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute; 
+        top: -25px; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+}
+`;
+
 export const Footer = styled.footer`
     width: 100vw;
     background-color: ${(props) => props.theme.colors.BegeUm};
@@ -158,7 +196,11 @@ export const Footer = styled.footer`
     justify-content: space-between;
 
     div {
-        color: ${(props) => props.theme.colors.VerdeEscuro};
+        color: ${(props) => props.theme.colors.Preto};
         padding: 2rem;
+
+        p {
+        margin-right: 55px;
+        }
     }
 `;
