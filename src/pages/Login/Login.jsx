@@ -1,7 +1,12 @@
 import React from "react";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+    const navigate = useNavigate();
+    const handleSubscribeClick = () => {
+        navigate("/cadastro");
+    };
     return (
         <div className="container">
             <div className="left-section">
@@ -46,7 +51,10 @@ export const Login = () => {
                         </div>
 
                         <div className="register">
-                            Ainda não possui cadastro? <a href="#">Cadastre-se</a>
+                            Ainda não possui cadastro?{" "}
+                            <a href="" onClick={handleSubscribeClick}>
+                                Cadastre-se
+                            </a>
                         </div>
                     </form>
                 </div>
