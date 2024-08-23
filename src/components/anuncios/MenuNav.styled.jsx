@@ -1,3 +1,4 @@
+// src/components/anuncios/MenuNav.styled.jsx:
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
@@ -63,3 +64,7 @@ export const ProfileImage = styled.img`
   border-radius: 50%;
   margin-left: 10px;
 `;
+
+
+
+

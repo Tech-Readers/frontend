@@ -1,6 +1,8 @@
+// src/pages/anuncios/AtualizarAnuncio.jsx:
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { getExchangeById, updateExchange } from '../../services/exchangeService';
+import Footer from '../../components/footer/footer';
 import {
   Container,
   Form,
@@ -9,9 +11,7 @@ import {
   Input,
   TextArea,
   ImageUpload,
-  SubmitButton,
-  Footer,
-  FooterText
+  SubmitButton
 } from './CriarAnuncio.styled';
 
 const AtualizarAnuncio = () => {
@@ -33,8 +33,7 @@ const AtualizarAnuncio = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const anuncio = await getExchangeById(id, token);
+        const anuncio = await getExchangeById(id); // token  é obtido internamente
         setFormData({
           titulo: anuncio.titulo,
           titulo_livro_oferecido: anuncio.titulo_livro_oferecido,
@@ -67,15 +66,14 @@ const AtualizarAnuncio = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
       const formDataToSubmit = new FormData();
 
       for (const key in formData) {
         formDataToSubmit.append(key, formData[key]);
       }
 
-      await updateExchange(id, formDataToSubmit, token);
-      history.push('/'); // redirecionar para a pagina principal
+      await updateExchange(id, formDataToSubmit); // token é obtido internamente
+      history.push('/'); // redirecionar para a página principal
     } catch (error) {
       console.error('Erro ao atualizar o anúncio:', error);
     }
@@ -178,12 +176,7 @@ const AtualizarAnuncio = () => {
         <SubmitButton type="submit">Salvar</SubmitButton>
       </Form>
 
-      <Footer>
-        <FooterText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-      </Footer>
+      <Footer /> {/* Adicionando o Footer como componente */}
     </Container>
   );
 };

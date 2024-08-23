@@ -1,33 +1,28 @@
-import styled from "styled-components";
+// src/components/anuncios/AdCard.styled.jsx:
+import styled from 'styled-components';
 
 export const Card = styled.div`
-    background-color: ${({ theme, isSelected }) =>
-        isSelected
-            ? theme.colors.Branco
-            : theme.colors.CinzaDois}; // Branco se selecionado, cinza claro se não
-    border: ${({ theme, isSelected }) =>
-        isSelected
-            ? `2px solid ${theme.colors.CinzaQuatro}`
-            : `1px solid ${theme.colors.CinzaTres}`};
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    cursor: pointer;
+  background-color: ${({ theme, isSelected }) => (isSelected ? theme.colors.Branco : theme.colors.CinzaDois)};
+  border: ${({ theme, isSelected }) => (isSelected ? `2px solid ${theme.colors.CinzaQuatro}` : `1px solid ${theme.colors.CinzaTres}`)};
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
 `;
 
 export const ProfileCircle = styled.div`
-    position: absolute;
-    width: 86px;
-    height: 86px;
-    top: -43px;
-    left: ${({ isSelected }) => (isSelected ? "-43px" : "50%")};
-    transform: ${({ isSelected }) => (isSelected ? "none" : "translateX(-50%)")};
-    background-color: #d9d9d9;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid ${({ theme }) => theme.colors.Branco};
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  top: -43px;
+  left: ${({ isSelected }) => (isSelected ? '-43px' : '50%')};
+  transform: ${({ isSelected }) => (isSelected ? 'none' : 'translateX(-50%)')};  
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid ${({ theme }) => theme.colors.Branco};
 
     img {
         width: 100%;
@@ -124,3 +119,10 @@ export const ToggleButton = styled.button`
         height: 24px;
     }
 `;
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> origin/Anuncios-Francis

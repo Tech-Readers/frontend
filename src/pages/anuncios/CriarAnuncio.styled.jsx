@@ -1,3 +1,4 @@
+// src/pages/anuncios/CriarAnuncio.styled.jsx:
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -82,3 +83,7 @@ export const FooterText = styled.p`
   color: ${({ theme }) => theme.colors.CinzaCinco};
   font-family: 'Inter', sans-serif;
 `;
+
+
+
+

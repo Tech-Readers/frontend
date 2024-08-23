@@ -1,4 +1,8 @@
+// src/pages/anuncios/criarAnuncio.jsx:
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { createExchange } from '../../services/exchangeService';
+import Footer from '../../components/footer/footer';
 import {
   Container,
   Form,
@@ -7,9 +11,7 @@ import {
   Input,
   TextArea,
   ImageUpload,
-  SubmitButton,
-  Footer,
-  FooterText
+  SubmitButton
 } from './CriarAnuncio.styled';
 
 const CriarAnuncio = () => {
@@ -25,6 +27,7 @@ const CriarAnuncio = () => {
     anunciante_id: '',
     imagem: null,
   });
+  const history = useHistory();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,22 +38,33 @@ const CriarAnuncio = () => {
     setFormData({ ...formData, imagem: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // ATENÇÃO: não esquecer de adicionar a logica para enviar os dados para o backend
-    console.log(formData);
+    try {
+      const token = localStorage.getItem('token');
+      const formDataToSubmit = new FormData();
+
+      for (const key in formData) {
+        formDataToSubmit.append(key, formData[key]);
+      }
+
+      await createExchange(formDataToSubmit, token);
+      history.push('/'); // redirecionar para a página principal após a criação bem-sucedida
+    } catch (error) {
+      console.error('Erro ao criar o anúncio:', error);
+    }
   };
 
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-      <FormGroup>
+        <FormGroup>
           <Label>Título do anúncio:</Label>
           <Input
             type="text"
             name="titulo"
             placeholder="Insira o título do anúncio."
-            value={formData.titulo_livro_oferecido}
+            value={formData.titulo}
             onChange={handleInputChange}
           />
         </FormGroup>
@@ -138,14 +152,10 @@ const CriarAnuncio = () => {
         <SubmitButton type="submit">Cadastrar</SubmitButton>
       </Form>
 
-      <Footer>
-        <FooterText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-        <FooterText>Lorem ipsum</FooterText>
-      </Footer>
+      <Footer /> {/* Adicionando o Footer como componente */}
     </Container>
   );
 };
 
 export default CriarAnuncio;
+
