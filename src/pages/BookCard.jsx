@@ -3,9 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';  // Importa PropTypes
 import './BookCard.css';
   
-  const BookCard = ({ image, title, author, genre, description, userProfile}) => {
+  const BookCard = ({ image, title, author, genre, description, userProfile, link}) => {
+    const handleClick = () => {
+      window.location.href = link;
+    };
     return (
-      <div className="book-card">
+      <div className="book-card" onClick={handleClick}>
         <div className="profile-pic-container">
                 <img src={userProfile} alt="Perfil do Usuário" className="profile-pic" />
             </div>
@@ -32,6 +35,7 @@ import './BookCard.css';
         genre: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         userProfile: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
     };
     
 
