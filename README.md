@@ -58,8 +58,6 @@
   └── index.html
 ```
 
-**Descrição:** 
-
 
 ## Instação das depedências :arrow_down_small:
 
