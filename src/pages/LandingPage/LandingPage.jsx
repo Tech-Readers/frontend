@@ -4,7 +4,6 @@ import Logomarca from "/src/assets/TECH-READER-copiar.svg";
 import ReadingCat from "../../assets/book.svg";
 import LandingPageHeader from "/src/assets/Landing-page.svg";
 import LoginIcon from "@mui/icons-material/Login";
-import { DivColumn, DivRow } from "../../GlobalStyle";
 import GatoUm from "../../assets/bell.svg";
 import GatoDois from "../../assets/Chat.svg";
 import GatoTres from "../../assets/gifts.svg";
@@ -103,7 +102,7 @@ export const LandingPage = () => {
             </section>
 
             <section id="Avaliacoes">
-                <DivRow>
+                <S.DivRow>
                     <ProfileCard
                         style={S.customStyleUm}
                         name=""
@@ -114,14 +113,14 @@ export const LandingPage = () => {
                         name=""
                         photoUrl="ligeirinho.jpg"
                     />
-                </DivRow>
+                </S.DivRow>
                 <S.CardAvaliacoes>
                     <p>
                         Acabei de descobrir o Tech Reader e estou completamente encantado!
                         Se você é apaixonado por livros este site é para você.
                     </p>
                 </S.CardAvaliacoes>
-                <DivRow>
+                <S.DivRow>
                     <ProfileCard
                         style={S.customStyleUm}
                         name=""
@@ -132,7 +131,7 @@ export const LandingPage = () => {
                         name=""
                         photoUrl="ligeirinho.jpg"
                     />
-                </DivRow>
+                </S.DivRow>
                 <S.CardAvaliacoes>
                     <p>
                         Se você é um amante de livros, não pode deixar de conhecer o Tech
@@ -143,16 +142,16 @@ export const LandingPage = () => {
             </section>
 
             <section id="subscribe">
-                <DivRow>
+                <S.DivRow>
                     <S.ImagemSubscribe
                         src={ReadingCat}
                         alt="imagem de livros em um notebook"
                     />
-                    <DivColumn>
+                    <S.DivColumn>
                         <S.CallForAction>Entre na comunidade</S.CallForAction>
                         <S.SubscribeButton>LEIA!</S.SubscribeButton>
-                    </DivColumn>
-                </DivRow>
+                    </S.DivColumn>
+                </S.DivRow>
             </section>
 
             <footer>

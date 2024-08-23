@@ -18,7 +18,18 @@ export const Body = styled.div`
         rgba(178, 214, 183, 1) 100%
     );
 `;
-
+export const DivRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: none;
+    padding: none;
+`;
+export const DivColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: none;
+    padding: none;
+`;
 //COMEÇO NAVBAR
 
 export const ImagemLogo = styled.img`
@@ -29,7 +40,7 @@ export const Navigation = styled.div`
     color: ${(props) => props.theme.colors.VerdeEscuro};
     width: 100%;
     height: 5rem;
-    position: fixed;
+    //position: fixed;
     top: 0;
     z-index: 10;
     display: flex;
