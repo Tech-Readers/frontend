@@ -8,6 +8,7 @@ import { DivColumn, DivRow } from "../../GlobalStyle";
 import GatoUm from "../../assets/bell.svg";
 import GatoDois from "../../assets/Chat.svg";
 import GatoTres from "../../assets/gifts.svg";
+import ProfileCard from "../../components/Chat/ProfileCard";
 
 export const LandingPage = () => {
     return (
@@ -22,7 +23,7 @@ export const LandingPage = () => {
                         <S.Link href="#Features">Features</S.Link>
                     </S.NavLink>
                     <S.NavLink>
-                        <S.Link href="#Avaliações">Avaliações</S.Link>
+                        <S.Link href="#Avaliacoes">Avaliações</S.Link>
                     </S.NavLink>
                     <S.NavLink>
                         <S.Subscribe>Inscreva-se</S.Subscribe>
@@ -60,10 +61,7 @@ export const LandingPage = () => {
 
             <section id="Features">
                 <S.CardLandingPage>
-                    <S.ImagemCard
-                        src={GatoUm}
-                        alt="imagem de livros em um notebook"
-                    ></S.ImagemCard>
+                    <img src={GatoUm} alt="imagem de livros em um notebook"></img>
                     <S.CardText>
                         <S.Título>ANUNCIE</S.Título>
                         <p>
@@ -86,16 +84,10 @@ export const LandingPage = () => {
                             mais fluida e a comunidade fica ainda mais rica e envolvente!
                         </p>
                     </S.CardText>
-                    <S.ImagemCard
-                        src={GatoDois}
-                        alt="imagem de livros em um notebook"
-                    ></S.ImagemCard>
+                    <img src={GatoDois} alt="imagem de livros em um notebook"></img>
                 </S.CardLandingPage>
                 <S.CardLandingPage>
-                    <S.ImagemCard
-                        src={GatoTres}
-                        alt="imagem de livros em um notebook"
-                    ></S.ImagemCard>
+                    <img src={GatoTres} alt="imagem de livros em um notebook"></img>
                     <S.CardText>
                         <S.Título>TROQUE</S.Título>
                         <p>
@@ -110,7 +102,45 @@ export const LandingPage = () => {
                 </S.CardLandingPage>
             </section>
 
-            <section></section>
+            <section id="Avaliacoes">
+                <DivRow>
+                    <ProfileCard
+                        style={S.customStyleUm}
+                        name=""
+                        photoUrl="ligeirinho.jpg"
+                    />
+                    <ProfileCard
+                        style={S.customStyleDois}
+                        name=""
+                        photoUrl="ligeirinho.jpg"
+                    />
+                </DivRow>
+                <S.CardAvaliacoes>
+                    <p>
+                        Acabei de descobrir o Tech Reader e estou completamente encantado!
+                        Se você é apaixonado por livros este site é para você.
+                    </p>
+                </S.CardAvaliacoes>
+                <DivRow>
+                    <ProfileCard
+                        style={S.customStyleUm}
+                        name=""
+                        photoUrl="ligeirinho.jpg"
+                    />
+                    <ProfileCard
+                        style={S.customStyleDois}
+                        name=""
+                        photoUrl="ligeirinho.jpg"
+                    />
+                </DivRow>
+                <S.CardAvaliacoes>
+                    <p>
+                        Se você é um amante de livros, não pode deixar de conhecer o Tech
+                        Reader. Este site é uma verdadeira joia para quem adora trocar e
+                        explorar novas leituras.
+                    </p>
+                </S.CardAvaliacoes>
+            </section>
 
             <section id="subscribe">
                 <DivRow>

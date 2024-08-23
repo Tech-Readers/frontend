@@ -1,3 +1,4 @@
+import { Translate } from "@mui/icons-material";
 import styled from "styled-components";
 
 export const Body = styled.div`
@@ -150,7 +151,23 @@ export const CardText = styled.div`
     align-items: center;
     text-align: center;
 `;
-export const ImagemCard = styled.img``;
+//COMEÇO AVALIAÇÕES
+
+export const CardAvaliacoes = styled.div`
+    background-color: ${(props) => props.theme.colors.CinzaUm};
+    border-radius: 10px;
+    height: 100px;
+    width: 400px;
+    padding: 4rem 3rem 1rem 3rem;
+    text-align: center;
+`;
+export const customStyleUm = {
+    transform: "translateY(40px)translateX(155px) ",
+    opacity: 0.8,
+};
+export const customStyleDois = {
+    transform: "translateY(40px) translateX(135px)",
+};
 
 //COMEÇO SUBSCRIBE
 export const ImagemSubscribe = styled.img`
