@@ -1,7 +1,5 @@
 import React from "react";
 import { Nav, NavLink, Subscribe } from "./style";
-import ChatImage from "../src/assets/message.svg";
-import LogoNavBar from "../src/assets/LOGO-TR.svg";
 
 export const MenuNav = () => {
     return (
