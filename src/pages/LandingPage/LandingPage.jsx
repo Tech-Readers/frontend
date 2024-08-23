@@ -8,6 +8,8 @@ import GatoUm from "../../assets/bell.svg";
 import GatoDois from "../../assets/Chat.svg";
 import GatoTres from "../../assets/gifts.svg";
 import ProfileCard from "../../components/Chat/ProfileCard";
+import "../../index.css";
+import Footer from "../../components/footer/footer";
 
 export const LandingPage = () => {
     return (
@@ -15,23 +17,23 @@ export const LandingPage = () => {
             <S.Navigation>
                 <S.ImagemLogo src={Logomarca} alt="LOGO" />
                 <S.ListStyle>
-                    <S.NavLink>
+                    <S.LinkNavBar>
                         <S.Link href="#About">About</S.Link>
-                    </S.NavLink>
-                    <S.NavLink>
+                    </S.LinkNavBar>
+                    <S.LinkNavBar>
                         <S.Link href="#Features">Features</S.Link>
-                    </S.NavLink>
-                    <S.NavLink>
+                    </S.LinkNavBar>
+                    <S.LinkNavBar>
                         <S.Link href="#Avaliacoes">Avaliações</S.Link>
-                    </S.NavLink>
-                    <S.NavLink>
+                    </S.LinkNavBar>
+                    <S.LinkNavBar>
                         <S.Subscribe>Inscreva-se</S.Subscribe>
-                    </S.NavLink>
-                    <S.NavLink>
+                    </S.LinkNavBar>
+                    <S.LinkNavBar>
                         <S.LoginLandingPage>
                             Login <LoginIcon />
                         </S.LoginLandingPage>
-                    </S.NavLink>
+                    </S.LinkNavBar>
                 </S.ListStyle>
             </S.Navigation>
 
@@ -101,48 +103,53 @@ export const LandingPage = () => {
                 </S.CardLandingPage>
             </section>
 
-            <section id="Avaliacoes">
-                <S.DivRow>
-                    <ProfileCard
-                        style={S.customStyleUm}
-                        name=""
-                        photoUrl="ligeirinho.jpg"
-                    />
-                    <ProfileCard
-                        style={S.customStyleDois}
-                        name=""
-                        photoUrl="ligeirinho.jpg"
-                    />
-                </S.DivRow>
-                <S.CardAvaliacoes>
-                    <p>
-                        Acabei de descobrir o Tech Reader e estou completamente encantado!
-                        Se você é apaixonado por livros este site é para você.
-                    </p>
-                </S.CardAvaliacoes>
-                <S.DivRow>
-                    <ProfileCard
-                        style={S.customStyleUm}
-                        name=""
-                        photoUrl="ligeirinho.jpg"
-                    />
-                    <ProfileCard
-                        style={S.customStyleDois}
-                        name=""
-                        photoUrl="ligeirinho.jpg"
-                    />
-                </S.DivRow>
-                <S.CardAvaliacoes>
-                    <p>
-                        Se você é um amante de livros, não pode deixar de conhecer o Tech
-                        Reader. Este site é uma verdadeira joia para quem adora trocar e
-                        explorar novas leituras.
-                    </p>
-                </S.CardAvaliacoes>
-            </section>
+            <S.SectionAvaliacoes id="Avaliacoes">
+                <S.DivColumn>
+                    <S.DivRow>
+                        <ProfileCard
+                            style={S.customStyleUm}
+                            name=""
+                            photoUrl="ligeirinho.jpg"
+                        />
+                        <ProfileCard
+                            style={S.customStyleDois}
+                            name=""
+                            photoUrl="ligeirinho.jpg"
+                        />
+                    </S.DivRow>
+                    <S.CardAvaliacoes>
+                        <S.CardText>
+                            Acabei de descobrir o Tech Reader e estou completamente
+                            encantado! Se você é apaixonado por livros este site é para
+                            você.
+                        </S.CardText>
+                    </S.CardAvaliacoes>
+                </S.DivColumn>
+                <S.DivColumn>
+                    <S.DivRow>
+                        <ProfileCard
+                            style={S.customStyleUm}
+                            name=""
+                            photoUrl="ligeirinho.jpg"
+                        />
+                        <ProfileCard
+                            style={S.customStyleDois}
+                            name=""
+                            photoUrl="ligeirinho.jpg"
+                        />
+                    </S.DivRow>
+                    <S.CardAvaliacoes>
+                        <S.CardText>
+                            Se você é um amante de livros, não pode deixar de conhecer o
+                            Tech Reader. Este site é uma verdadeira joia para quem adora
+                            trocar e explorar novas leituras.
+                        </S.CardText>
+                    </S.CardAvaliacoes>
+                </S.DivColumn>
+            </S.SectionAvaliacoes>
 
             <section id="subscribe">
-                <S.DivRow>
+                <S.DivRow style={{ alignItems: "flex-end", gap: "40px" }}>
                     <S.ImagemSubscribe
                         src={ReadingCat}
                         alt="imagem de livros em um notebook"
@@ -154,10 +161,10 @@ export const LandingPage = () => {
                 </S.DivRow>
             </section>
 
-            <footer>
+            <Footer>
                 <p>The MIT License (MIT)</p>
                 <p>Copyright ©️ 2024 - Conectando Leitores</p>
-            </footer>
+            </Footer>
         </S.Body>
     );
 };

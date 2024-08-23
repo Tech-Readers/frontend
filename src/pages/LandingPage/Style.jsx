@@ -4,17 +4,18 @@ import styled from "styled-components";
 export const Body = styled.div`
     display: flex;
     flex-direction: Column;
-    //    width: 100%;
+    width: 100%;
     box-sizing: none;
     padding: none;
     margin: none;
+    transition: all 0.5s;
     //    max-width: 1920px;
     align-items: center;
     background: rgb(254, 252, 252);
     background: linear-gradient(
         0deg,
         rgba(254, 252, 252, 1) 0%,
-        rgba(178, 214, 183, 1) 30%,
+        rgba(178, 214, 183, 1) 70%,
         rgba(178, 214, 183, 1) 100%
     );
 `;
@@ -40,7 +41,7 @@ export const Navigation = styled.div`
     color: ${(props) => props.theme.colors.VerdeEscuro};
     width: 100%;
     height: 5rem;
-    //position: fixed;
+    position: fixed;
     top: 0;
     z-index: 10;
     display: flex;
@@ -62,13 +63,14 @@ export const ListStyle = styled.ul`
 export const Link = styled.a`
     color: ${(props) => props.theme.colors.VerdeEscuro};
     font-size: 1.1rem;
+    text-decoration: none !important;
 `;
-export const NavLink = styled.li`
-    list-style-type: none;
+export const LinkNavBar = styled.li`
     margin: 0;
     padding: 0rem 0.4rem;
     display: flex;
     justify-content: center;
+    font-family: ${(props) => props.theme.fonts.Principal};
     align-items: center;
 `;
 export const Subscribe = styled.button`
@@ -76,6 +78,8 @@ export const Subscribe = styled.button`
     color: ${(props) => props.theme.colors.Branco};
     font-size: 1.2rem;
     border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     transition: all 0.5s;
     &:hover {
         -webkit-transform: scale(1.1);
@@ -161,8 +165,21 @@ export const CardText = styled.div`
     padding: none;
     align-items: center;
     text-align: center;
+    font-family: ${(props) => props.theme.fonts.Principal};
 `;
+
 //COMEÇO AVALIAÇÕES
+export const SectionAvaliacoes = styled.section`
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 8rem;
+    padding-top: 4rem;
+    border-top: 1px solid ${(props) => props.theme.colors.CinzaQuatro};
+    border-bottom: 1px solid ${(props) => props.theme.colors.CinzaQuatro};
+`;
 
 export const CardAvaliacoes = styled.div`
     background-color: ${(props) => props.theme.colors.CinzaUm};
@@ -189,7 +206,8 @@ export const SubscribeButton = styled.button`
     background-color: ${(props) => props.theme.colors.VerdeEscuro};
     color: ${(props) => props.theme.colors.Branco};
     font-size: 60px;
-    height: 8rem;
+    height: 7rem;
+    border-radius: 10px;
     padding: 0;
     font-family: ${(props) => props.theme.fonts.Segunda};
     width: 320px;
@@ -197,7 +215,7 @@ export const SubscribeButton = styled.button`
     transition: all 0.5s;
     &:hover {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
-        color: ${(props) => props.theme.colors.VerdeEscuro};
+        background-color: ${(props) => props.theme.colors.VerdeMedioUm};
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
     }
@@ -207,4 +225,12 @@ export const CallForAction = styled.p`
     font-size: 40px;
     margin-bottom: 0;
     color: ${(props) => props.theme.colors.VerdeMedioUm};
+`;
+// FOOTER
+
+export const Footer = styled.footer`
+    background-color: ${(props) => props.theme.colors.BegeUm};
+    width: 100%;
+    height: 15rem;
+    margin-top: 80px;
 `;

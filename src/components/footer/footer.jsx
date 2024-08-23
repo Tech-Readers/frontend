@@ -1,21 +1,20 @@
 // src/components/footer/footer.jsx:
-import React from 'react';
-import { FooterContainer, FooterText } from './Footer.styled';
+import React from "react";
+import { DivColumn, DivRow, FooterContainer, FooterText } from "./Style";
 
 const Footer = () => {
-  return (
-    <FooterContainer>
-      <FooterText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</FooterText>
-      <FooterText>Lorem ipsum</FooterText>
-      <FooterText>Lorem ipsum</FooterText>
-      <FooterText>Lorem ipsum</FooterText>
-    </FooterContainer>
-  );
+    return (
+        <FooterContainer>
+            <FooterText>Conectando leitores desde 2024.</FooterText>
+            <DivColumn style={{ gap: "10px" }}>
+                <FooterText>The MIT License (MIT)</FooterText>
+                <FooterText>Tech Reader</FooterText>
+                <FooterText>Instituto Atlantico</FooterText>
+
+                <FooterText>Avanti</FooterText>
+            </DivColumn>
+        </FooterContainer>
+    );
 };
 
 export default Footer;
-
-
-
-
-
