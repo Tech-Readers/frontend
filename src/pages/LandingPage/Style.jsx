@@ -70,6 +70,7 @@ export const Subscribe = styled.button`
     border-radius: 4px;
     transition: all 0.5s;
     &:hover {
+        cursor: pointer;
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
@@ -207,6 +208,7 @@ export const SubscribeButton = styled.button`
     border: none;
     transition: all 0.5s;
     &:hover {
+        cursor: pointer;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
         background-color: ${(props) => props.theme.colors.VerdeMedioUm};
         -webkit-transform: scale(1.05);

@@ -47,7 +47,7 @@ export const Cadastro = () => {
             }
 
             await createExchange(formDataToSubmit, token);
-            history.push("/home"); // redirecionar para a página principal após a criação bem-sucedida
+            navigate.push("/home"); // redirecionar para a página principal após a criação bem-sucedida
         } catch (error) {
             console.error("Erro ao criar o anúncio:", error);
         }

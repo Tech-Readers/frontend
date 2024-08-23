@@ -10,7 +10,7 @@ import GatoDois from "../../assets/Chat.svg";
 import GatoTres from "../../assets/gifts.svg";
 import ProfileCard from "../../components/Chat/ProfileCard";
 import "../../index.css";
-import Footer from "../../components/footer/footer";
+import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 
 export const LandingPage = () => {

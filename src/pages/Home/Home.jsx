@@ -2,6 +2,8 @@
 import React from "react";
 import "./style.css";
 import BookCard from "./BookCard";
+import { MenuNav } from "../../components/menunav/MenuNav";
+import { DivColumn } from "../../AppStyle";
 
 export const Home = () => {
     const books = [
@@ -73,8 +75,8 @@ export const Home = () => {
     ];
 
     return (
-        <>
-            <nav className="container">
+        <DivColumn>
+            <MenuNav>
                 <header className="header">
                     <div className="logo">
                         <img
@@ -121,7 +123,7 @@ export const Home = () => {
                         />
                     </div>
                 </header>
-            </nav>
+            </MenuNav>
             <main>
                 <div className="container-banner">
                     <img
@@ -171,7 +173,7 @@ export const Home = () => {
                     <p>© 2024. Tech Readers</p>
                 </div>
             </footer>
-        </>
+        </DivColumn>
     );
 };
 

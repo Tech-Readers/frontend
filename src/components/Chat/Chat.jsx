@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Chat.css";
 import ProfileCard from "./ProfileCard";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 import { DivColumn } from "../../AppStyle";
-import { MenuNav } from "/src/components/menunav/MenuNav.jsx";
+import MenuNav from "../menunav/MenuNav";
 
 const ANUNCIO_ID = 1;
 const UserRecebe = "b07a9e6d-c82d-4386-adfd-745c21986cb5";
 const UserLogado = "c59beb18-7c5d-43d0-aed2-ecd05db452ee";
+
 const token = localStorage.getItem("token");
 
 export const Chat = () => {
@@ -83,7 +84,7 @@ export const Chat = () => {
     }, []);
 
     return (
-        <DivColumn>
+        <DivColumn style={{ alignContent: "center", justifyContent: "center" }}>
             <MenuNav />
             <div className="chat-user">
                 <ProfileCard name="Nina" photoUrl="ligeirinho.jpg" />
