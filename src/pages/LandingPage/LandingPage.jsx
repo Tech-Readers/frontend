@@ -17,10 +17,10 @@ export const LandingPage = () => {
     const navigate = useNavigate();
 
     const handleSubscribeClick = () => {
-        navigate("/rota-desejada");
+        navigate("/cadastro");
     };
     const handleLogin = () => {
-        navigate("/rota-desejada");
+        navigate("/login");
     };
 
     return (
