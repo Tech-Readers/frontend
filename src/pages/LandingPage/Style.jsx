@@ -145,7 +145,6 @@ export const CardLandingPage = styled.div`
     flex-direction: row;
     margin: 20px 0px;
     padding: 2rem 3rem;
-    border: 1px solid red;
     width: 1010px;
     height: 300px;
     border-radius: 10px;
