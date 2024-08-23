@@ -5,13 +5,21 @@ import ProfileCard from './ProfileCard';
 const ANUNCIO_ID = 1;
 const UserRecebe = 'b07a9e6d-c82d-4386-adfd-745c21986cb5';
 const UserLogado = 'c59beb18-7c5d-43d0-aed2-ecd05db452ee';
+const token = localStorage.getItem('token');
+ 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/messages/exchanges/${ANUNCIO_ID}`);
+      const response = await fetch(`http://localhost:8000/messages/exchanges/${ANUNCIO_ID}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (!response.ok) {
         throw new Error('Falha ao buscar mensagens');
       }
@@ -28,10 +36,12 @@ const Chat = () => {
 
     if (newMessage.trim()) {
       try {
-        const response = await fetch('http://localhost:8080/messages/', {
+        
+        const response = await fetch('http://localhost:8000/messages/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
             texto: newMessage, anuncio_id: ANUNCIO_ID.toString(),
@@ -74,7 +84,6 @@ const Chat = () => {
           {messages.map(message => (
             <div
               key={message.id}
-              userMessage={message.usuario_remetente_id}
               className={`message ${message.usuario_remetente_id == UserLogado ? 'sent' : 'received'}`}
             >
               {message.texto}
