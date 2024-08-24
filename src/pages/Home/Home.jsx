@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 // src/pages/Home/Home.jsx:
-// src/pages/Home/Home.jsx:
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import BookCard from "./BookCard";

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-// // src/pages/Home/BookCard.jsx:
+// src/pages/Home/BookCard.jsx:
 import React from 'react';
 import PropTypes from 'prop-types';  // Importa PropTypes
 import './BookCard.css';
@@ -45,4 +45,3 @@ import './BookCard.css';
 
 
 
-  
