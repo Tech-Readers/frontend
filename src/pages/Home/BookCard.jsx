@@ -1,4 +1,4 @@
-//import PropTypes from "prop-types"; // Importa PropTypes
+import PropTypes from "prop-types"; // Importa PropTypes
 import React from "react";
 import "./BookCard.css";
 
@@ -27,14 +27,14 @@ const BookCard = ({ image, title, author, genre, description, userProfile, link 
 };
 
 //Definição de tipos e obrigatoriedade das props
-//BookCard.propTypes = {
-//image: PropTypes.string.isRequired,
-//title: PropTypes.string.isRequired,
-//author: PropTypes.string.isRequired,
-//genre: PropTypes.string.isRequired,
-//description: PropTypes.string.isRequired,
-//userProfile: PropTypes.string.isRequired,
-//link: PropTypes.string.isRequired,
-//};
+BookCard.propTypes = {
+    //image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    userProfile: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+};
 
 export default BookCard;
