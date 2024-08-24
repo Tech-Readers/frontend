@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+// src/pages/Home/Home.jsx:
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import BookCard from "./BookCard";
 import { MenuNav } from "../../components/menunav/MenuNav";
@@ -86,23 +87,23 @@ export const Home = () => {
                 <div className="book-cards-container">
                     {books.map((book, index) => (
                         <BookCard
-                            key={index}
-                            image={book.image}
-                            title={book.title}
-                            author={book.author}
-                            genre={book.genre}
-                            description={book.description}
+                        key={index}
+                        image={book.image || 'src/path/to/default-book-image.png'} // Certifique-se de que image não seja null ou undefined
+                        title={book.titulo}
+                        author={book.autor_livro_oferecido}
+                        genre={book.genero_livro_oferecido}
+                        description={book.descricao}
+                        userProfile={book.userProfile || 'src/path/to/default-profile-image.png'} // Certifique-se de que userProfile não seja null ou undefined
+                        link={`/anuncio/${book.id}`} // Corrigido para o link da página do anúncio
                         />
+                    
                     ))}
                 </div>
             </main>
             <footer className="footer">
                 <div className="footer-content">
                     <div className="description">
-                        <p>
-                            Trata-se de uma aplicação web que facilite a troca de livros
-                            entre leitores,{" "}
-                        </p>
+                        <p>Trata-se de uma aplicação web que facilite a troca de livros entre leitores, </p>
                         <p>promovendo o compartilhamento de recursos literários </p>
                         <p>e a interação social dentro da comunidade de leitores.</p>
                     </div>
@@ -128,3 +129,7 @@ export const Home = () => {
 };
 
 export default Home;
+
+
+
+
