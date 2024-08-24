@@ -48,7 +48,23 @@ export const Profile = () => {
             <AdSection>
                 <h2>MEUS ANÚNCIOS</h2>
                 <div>
-                    <Cards />
+                    <AdCard>
+                        <ProfileAnuncio style={{ left: "15px" }}>
+                            <img src={ImagemPerfil} alt="perfil" />
+                        </ProfileAnuncio>
+                        <ProfileAnuncio style={{ left: "-15px", top: "-12px" }}>
+                            <img src={ImagemPerfil} alt="perfil" />
+                        </ProfileAnuncio>
+                        <img src={Livro} alt="Anúncio Avaliado" />
+                        <h3>Título Livro</h3>
+                        <p>Gênero | Autor</p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Magnam optio amet sint quibusdam, eius natus? Ipsam, nulla
+                            veritatis ipsum molestiae odio obcaecati corporis. Porro rem
+                            placeat repellat dolore ipsam voluptas!
+                        </p>
+                    </AdCard>
                 </div>
             </AdSection>
 
