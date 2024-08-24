@@ -7,11 +7,13 @@ import { Home } from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import { Cadastro } from "./pages/cadastro/cadastro";
 import { Anuncios } from "./pages/anuncios/Anuncios";
+import { Profile } from "./pages/Profile/Profile";
 
 const AppRoutes = () => {
     return (
         <Router>
             <Routes>
+                <Route path="/perfil" element={<Profile />} />;
                 <Route path="/Anuncios" element={<Anuncios />} />;
                 <Route path="/cadastro" element={<Cadastro />} />;
                 <Route path="/login" element={<Login />} />;
