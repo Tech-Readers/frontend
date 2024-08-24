@@ -20,7 +20,8 @@ export const Chat = () => {
     // Função para buscar mensagens
     const fetchMessages = async () => {
         try {
-            if (ANUNCIO_ID) { // Verifica se o ID do anúncio está definido
+            if (ANUNCIO_ID) {
+                // Verifica se o ID do anúncio está definido
                 const data = await getMessagesByExchangeId(ANUNCIO_ID);
                 console.log(data);
                 setMessages(data);
@@ -99,8 +100,3 @@ export const Chat = () => {
         </DivColumn>
     );
 };
-
-
-
-
-y

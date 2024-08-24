@@ -1,53 +1,6 @@
 import styled from "styled-components";
 
-export const Body = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    font-size: 1rem;
-    background-color: ${(props) => props.theme.colors.Branco};
-    min-height: 100vh;
-    padding-top: 5rem; 
-
-    @media (max-width: 768px) {
-        padding-top: 6rem; 
-    }
-`;
-
-export const ImagemLogo = styled.img`
-    width: 10rem;
-
-    @media (max-width: 768px) {
-        width: 7rem;
-    }
-`;
-
-export const Navigation = styled.div`
-    background-color: ${(props) => props.theme.colors.BegeUm};
-    color: ${(props) => props.theme.colors.VerdeEscuro};
-    width: 100vw;
-    height: 5rem;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    font-family: ${(props) => props.theme.fonts.Principal};
-    margin: 0;
-    justify-content: space-evenly;
-    padding-top: 0.3rem;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem;
-    }
-`;
+export const Body = styled.div``;
 
 export const ListStyle = styled.ul`
     display: flex;
@@ -77,35 +30,22 @@ export const ListStyle = styled.ul`
     }
 `;
 
-export const ProfileNavegation = styled.img`
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    margin-right: 2px;
-
-    @media (max-width: 768px) {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-`;
-
 export const LoginContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;  
-    margin-top: 8rem; 
+    padding-top: 8rem !important;
     padding: 2rem;
     background-color: ${(props) => props.theme.colors.CinzaUm};
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    flex-direction: row; 
+    flex-direction: row;
 
     @media (max-width: 768px) {
         flex-direction: column;
         width: 95%;
         padding: 1rem;
-        margin-top: 10rem; 
+        margin-top: 10rem;
     }
 `;
 
@@ -114,7 +54,7 @@ export const ProfilePic = styled.div`
     height: 16rem;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 2rem; 
+    margin-right: 2rem;
 
     img {
         width: 100%;
@@ -133,7 +73,7 @@ export const UserInfo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4.6rem; 
+    gap: 4.6rem;
 
     div {
         display: flex;
@@ -176,9 +116,12 @@ export const UserInfo = styled.div`
 `;
 
 export const AdSection = styled.section`
-    width: 90%;  
+    width: 90%;
     margin: 2rem 0;
-
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
@@ -257,8 +200,8 @@ export const ProfileAnuncio = styled.div`
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        position: absolute; 
-        top: -25px; 
+        position: absolute;
+        top: -25px;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
@@ -268,32 +211,6 @@ export const ProfileAnuncio = styled.div`
         img {
             width: 40px;
             height: 40px;
-        }
-    }
-`;
-
-export const Footer = styled.footer`
-    width: 100vw;
-    background-color: ${(props) => props.theme.colors.BegeUm};
-    display: flex;
-    justify-content: space-between;
-
-    div {
-        color: ${(props) => props.theme.colors.Preto};
-        padding: 2rem;
-
-        p {
-            margin-right: 55px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: center;
-
-        div {
-            padding: 1rem;
-            text-align: center;
         }
     }
 `;

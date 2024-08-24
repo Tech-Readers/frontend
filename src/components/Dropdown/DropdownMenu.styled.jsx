@@ -10,7 +10,7 @@ export const MenuButton = styled.div`
 `;
 
 export const MenuList = styled.div`
-    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+    display: ${({ $isOpen }) => ($isOpen ? "block" : "none")};
     position: absolute;
     right: 0;
     top: 50px;

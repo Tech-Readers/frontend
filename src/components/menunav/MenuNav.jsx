@@ -15,8 +15,15 @@ import chatIcon from "../../assets/chat-icon.svg";
 import adIcon from "../../assets/ad-anuncio-icon.svg";
 import starIcon from "../../assets/star-icon.svg";
 import DropdownMenu from "../Dropdown/DropdownMenu";
+import { useNavigate } from "react-router-dom";
 
 export const MenuNav = () => {
+    const navigate = useNavigate();
+
+    const handleClick = (path) => {
+        navigate(path);
+    };
+
     return (
         <>
             <Nav>
@@ -26,15 +33,15 @@ export const MenuNav = () => {
                     <SearchBar placeholder="Buscar" />
                 </SearchBarContainer>
                 <NavLinks>
-                    <NavLink>
+                    <NavLink onClick={() => handleClick("/chat")}>
                         <img src={chatIcon} alt="Chat" />
                         Chat
                     </NavLink>
-                    <NavLink>
+                    <NavLink onClick={() => handleClick("/anuncios")}>
                         <img src={adIcon} alt="Meus Anúncios" />
                         Meus Anúncios
                     </NavLink>
-                    <NavLink>
+                    <NavLink onClick={() => handleClick("/avaliacoes")}>
                         <img src={starIcon} alt="Avaliações" />
                         Avaliações
                     </NavLink>
