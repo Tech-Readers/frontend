@@ -37,15 +37,26 @@
 ## Arquitetura do Frontend :triangular_ruler: :straight_ruler:
 
 ```plaintext
-public/
-
-
-src/
-
+  Conectando Leitores
+  |
+  |  src/
+  |  │
+  |  ├── assets/
+  |  │
+  |  ├── components/
+  |  │
+  |  ├── pages/
+  |  │
+  |  ├── services/
+  |  │
+  |  ├── App.jsx
+  |  ├── GlobalStyle.jsx
+  |  ├── index.css
+  |  └── main.jsx
+  |
+  | 
+  └── index.html
 ```
-
-
-**Descrição:** 
 
 
 ## Instação das depedências :arrow_down_small:
