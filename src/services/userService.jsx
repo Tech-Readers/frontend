@@ -1,6 +1,28 @@
 // src/services/userService.jsx:
 import api from './api';
 
+// usuários (users) possuem os seguintes atributos:
+// {
+//   "nome": "",
+//   "email": "",
+//   "senha": "",
+//   "image": "",
+//   "enderecos": {
+//       "logradouro": "",
+//       "numero": "",
+//       "bairro": "",
+//       "complemento": "",
+//       "cep": "",
+//       "municipio": "",
+//       "uf": ""
+//   },
+//   "telefones": [
+//       {
+//           "contato": ""
+//       }
+//   ]
+// }
+
 // Retorna todos os usuários
 export const getAllUsers = async () => {
   try {

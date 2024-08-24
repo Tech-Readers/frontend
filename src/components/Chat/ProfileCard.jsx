@@ -1,3 +1,4 @@
+// src/components/Chat/ProfileCard.jsx:
 import React from "react";
 import "./ProfileCard.css";
 
@@ -13,3 +14,6 @@ const ProfileCard = ({ name, photoUrl, style }) => {
 };
 
 export default ProfileCard;
+
+
+

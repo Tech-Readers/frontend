@@ -1,71 +1,53 @@
+// src/components/Chat/Chat.jsx:
+// src/components/Chat/Chat.jsx:
 import React, { useState, useEffect } from "react";
 import "./Chat.css";
 import ProfileCard from "./ProfileCard";
 import Footer from "../footer/Footer";
 import { DivColumn } from "../../AppStyle";
 import MenuNav from "../menunav/MenuNav";
-
-const ANUNCIO_ID = 1;
-const UserRecebe = "b07a9e6d-c82d-4386-adfd-745c21986cb5";
-const UserLogado = "c59beb18-7c5d-43d0-aed2-ecd05db452ee";
-
-const token = localStorage.getItem("token");
+import { getMessagesByExchangeId, createMessage } from "../../services/messageService"; // Importando funções do service
 
 export const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
+
+    // Obtendo IDs de usuário e anúncio do localStorage
+    const UserLogado = localStorage.getItem("userId"); // ID do usuário logado
+    const ANUNCIO_ID = localStorage.getItem("anuncioId"); // ID do anúncio selecionado
+    const UserRecebe = localStorage.getItem("userDestinatarioId"); // ID do usuário destinatário (obtido de outra forma)
+
+    // Função para buscar mensagens
     const fetchMessages = async () => {
         try {
-            const response = await fetch(
-                `http://localhost:8000/messages/exchanges/${ANUNCIO_ID}`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-            if (!response.ok) {
-                throw new Error("Falha ao buscar mensagens");
+            if (ANUNCIO_ID) { // Verifica se o ID do anúncio está definido
+                const data = await getMessagesByExchangeId(ANUNCIO_ID);
+                console.log(data);
+                setMessages(data);
+            } else {
+                console.warn("ID do anúncio não encontrado.");
             }
-            const data = await response.json();
-            console.log(data);
-            setMessages(data);
         } catch (error) {
             console.error("Erro ao buscar mensagens:", error);
         }
     };
 
+    // Função para enviar nova mensagem
     const handleSendMessage = async () => {
         console.log(newMessage);
 
         if (newMessage.trim()) {
             try {
-                const response = await fetch("http://localhost:8000/messages/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                    body: JSON.stringify({
-                        texto: newMessage,
-                        anuncio_id: ANUNCIO_ID.toString(),
-                        usuario_destinatario_id: UserRecebe,
-                        usuario_remetente_id: UserLogado,
-                    }),
-                });
+                const messageData = {
+                    texto: newMessage,
+                    anuncio_id: ANUNCIO_ID,
+                    usuario_destinatario_id: UserRecebe,
+                    usuario_remetente_id: UserLogado,
+                };
 
-                // {
-                //     "texto": "gostaria de realizar uma troca",
-                //     "anuncio_id": "1",
-                //     "usuario_destinatario_id": "c59beb18-7c5d-43d0-aed2-ecd05db452ee",
-                //     "usuario_remetente_id": "b07a9e6d-c82d-4386-adfd-745c21986cb5"
-                // }
+                await createMessage(messageData); // Usando função de service para enviar mensagem
 
-                if (!response.ok) {
-                    throw new Error("Falha ao enviar mensagem" + error.message);
-                }
+                // Adiciona a mensagem enviada ao estado local
                 const sentMessage = {
                     id: Date.now(),
                     usuario_remetente_id: UserLogado,
@@ -80,7 +62,7 @@ export const Chat = () => {
     };
 
     useEffect(() => {
-        fetchMessages();
+        fetchMessages(); // Busca mensagens ao carregar o componente
     }, []);
 
     return (
@@ -94,7 +76,7 @@ export const Chat = () => {
                             <div
                                 key={message.id}
                                 className={`message ${
-                                    message.usuario_remetente_id == UserLogado
+                                    message.usuario_remetente_id === UserLogado
                                         ? "sent"
                                         : "received"
                                 }`}
@@ -113,7 +95,12 @@ export const Chat = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            <Footer />
         </DivColumn>
     );
 };
+
+
+
+
+y
