@@ -7,6 +7,7 @@ import Footer from "../footer/Footer";
 import { DivColumn } from "../../AppStyle";
 import MenuNav from "../menunav/MenuNav";
 import { getMessagesByExchangeId, createMessage } from "../../services/messageService"; // Importando funções do service
+import { getExchangesByUserId, getAllExchanges } from "../../services/exchangeService"; // Importando funções do service
 
 export const Chat = () => {
     const [messages, setMessages] = useState([]);
@@ -14,8 +15,9 @@ export const Chat = () => {
 
     // Obtendo IDs de usuário e anúncio do localStorage
     const UserLogado = localStorage.getItem("userId"); // ID do usuário logado
-    const ANUNCIO_ID = localStorage.getItem("anuncioId"); // ID do anúncio selecionado
-    const UserRecebe = localStorage.getItem("userDestinatarioId"); // ID do usuário destinatário (obtido de outra forma)
+    var ANUNCIO_ID = localStorage.getItem("anuncioId"); // ID do anúncio selecionado
+    var UserRecebe = localStorage.getItem("userDestinatarioId"); // ID do usuário destinatário (obtido de outra forma)
+
 
     // Função para buscar mensagens
     const fetchMessages = async () => {
@@ -62,7 +64,18 @@ export const Chat = () => {
         }
     };
 
-    useEffect(() => {
+    const fetchData = async () => {
+        try {
+          const response = await getExchangesByUserId();
+          ANUNCIO_ID = response.data[0].id;
+          UserRecebe = response.data[0].anunciante_id;
+        } catch (error) {
+          console.error('Erro ao buscar dados:', error);
+        }
+      };
+
+    useEffect(() => {    
+        fetchData();
         fetchMessages(); // Busca mensagens ao carregar o componente
     }, []);
 
