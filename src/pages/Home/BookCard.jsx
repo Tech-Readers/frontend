@@ -3,9 +3,11 @@ import React from "react";
 import "./BookCard.css";
 
 const BookCard = ({ image, title, author, genre, description, userProfile, link }) => {
+
     const handleClick = () => {
         window.location.href = link;
     };
+    
     return (
         <div className="book-card" onClick={handleClick}>
             <div className="profile-pic-container">
