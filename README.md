@@ -62,6 +62,15 @@
 ```
 
 
+**Descrição:** :heavy_check_mark:
+
+1. **Assets:** Pastas que contêm recursos estáticos como imagens e fontes.
+2. **components:** Componentes reutilizáveis que formam a interface do usuário.
+3. **Services:** Funções que lidam com chamadas a APIs e lógica de negócios.
+4. **Pages:** Estrutura das diferentes páginas da aplicação.
+5. **App.jsx e GlobalStyle.jsx:** Arquivos principais que definem a aplicação e estilos globais.
+
+
 ## Instação das depedências :arrow_down_small:
 
 ```bash
