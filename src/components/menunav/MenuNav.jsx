@@ -27,7 +27,12 @@ export const MenuNav = () => {
     return (
         <>
             <Nav>
-                <Logo src={logoImg} alt="Logo" />
+                <Logo
+                    style={{ cursor: "pointer" }}
+                    src={logoImg}
+                    alt="Logo"
+                    onClick={() => handleClick("/home")}
+                />
                 <SearchBarContainer>
                     <SearchIcon src={searchIcon} alt="Buscar" />
                     <SearchBar placeholder="Buscar" />

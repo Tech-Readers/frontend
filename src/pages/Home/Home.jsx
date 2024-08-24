@@ -7,6 +7,7 @@ import { MenuNav } from "../../components/menunav/MenuNav";
 import { DivColumn } from "../../AppStyle";
 import Hobbit from "../../assets/hobbit.png";
 import Header from "../../assets/HEADER.svg";
+import Footer from "../../components/footer/Footer";
 
 export const Home = () => {
     const books = [
@@ -87,49 +88,24 @@ export const Home = () => {
                 <div className="book-cards-container">
                     {books.map((book, index) => (
                         <BookCard
-                        key={index}
-                        image={book.image || 'src/path/to/default-book-image.png'} // Certifique-se de que image não seja null ou undefined
-                        title={book.titulo}
-                        author={book.autor_livro_oferecido}
-                        genre={book.genero_livro_oferecido}
-                        description={book.descricao}
-                        userProfile={book.userProfile || 'src/path/to/default-profile-image.png'} // Certifique-se de que userProfile não seja null ou undefined
-                        link={`/anuncio/${book.id}`} // Corrigido para o link da página do anúncio
+                            key={index}
+                            image={book.image || "src/path/to/default-book-image.png"}
+                            title={book.titulo}
+                            author={book.autor_livro_oferecido}
+                            genre={book.genero_livro_oferecido}
+                            description={book.descricao}
+                            userProfile={
+                                book.userProfile ||
+                                "src/path/to/default-profile-image.png"
+                            }
+                            link={`/anuncio/${book.id}`}
                         />
-                    
                     ))}
                 </div>
             </main>
-            <footer className="footer">
-                <div className="footer-content">
-                    <div className="description">
-                        <p>Trata-se de uma aplicação web que facilite a troca de livros entre leitores, </p>
-                        <p>promovendo o compartilhamento de recursos literários </p>
-                        <p>e a interação social dentro da comunidade de leitores.</p>
-                    </div>
-                    <div className="images">
-                        <img
-                            src="src/components/images/LogoAvanti.png"
-                            alt="Imagem 1"
-                            className="top-image"
-                        />
-                        <img
-                            src="src/assets/LOGO TECH READERS.svg"
-                            alt="Imagem 2"
-                            className="bottom-image"
-                        />
-                    </div>
-                </div>
-                <div className="footer-text">
-                    <p>© 2024. Tech Readers</p>
-                </div>
-            </footer>
+            <Footer></Footer>
         </DivColumn>
     );
 };
 
 export default Home;
-
-
-
-
