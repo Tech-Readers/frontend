@@ -12,3 +12,8 @@ export const DivColumn = styled.div`
     margin: none;
     padding: none;
 `;
+
+
+
+
+

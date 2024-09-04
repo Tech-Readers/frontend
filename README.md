@@ -40,35 +40,237 @@
 ## Arquitetura do Frontend :triangular_ruler: :straight_ruler:
 
 ```plaintext
-  Conectando Leitores
-  |
-  |  src/
-  |  │
-  |  ├── assets/
-  |  │
-  |  ├── components/
-  |  │
-  |  ├── pages/
-  |  │
-  |  ├── services/
-  |  │
-  |  ├── App.jsx
-  |  ├── GlobalStyle.jsx
-  |  ├── index.css
-  |  └── main.jsx
-  |
-  | 
-  └── index.html
+Conectando Leitores
+|
+|    src/
+|    │
+|    ├── assets/
+|    │   └── ... (imagens e outros recursos)
+|    │
+|    ├── components/
+|    │   ├── Button/
+|    │   │   ├── Button.jsx
+|    │   │   └── Button.styles.jsx
+|    │   ├── InputField/
+|    │   │   ├── InputField.jsx
+|    │   │   └── InputField.styles.jsx
+|    │   ├── TextArea/
+|    │   │   ├── TextArea.jsx
+|    │   │   └── TextArea.styles.jsx
+|    │   ├── Card/
+|    │   │   ├── Card.jsx
+|    │   │   └── Card.styles.jsx
+|    │   ├── ProfileCard/
+|    │   │   ├── ProfileCard.jsx
+|    │   │   └── ProfileCard.styles.jsx
+|    │   ├── Navbar/
+|    │   │   ├── Navbar.jsx
+|    │   │   └── Navbar.styles.jsx
+|    │   ├── NavbarLanding/
+|    │   │   ├── NavbarLanding.jsx
+|    │   │   └── NavbarLanding.styles.jsx
+|    │   ├── DropdownMenu/
+|    │   │   ├── DropdownMenu.jsx
+|    │   │   └── DropdownMenu.styles.jsx
+|    │   ├── Footer/
+|    │   │   ├── Footer.jsx
+|    │   │   └── Footer.styles.jsx
+|    │   ├── ReviewStars/
+|    │   │   ├── ReviewStars.jsx
+|    │   │   └── ReviewStars.styles.jsx
+|    │   └── ChatBubble/
+|    │       ├── ChatBubble.jsx
+|    │       └── ChatBubble.styles.jsx
+|    │
+|    ├── modals/
+|    │   ├── UpdateAdModal/
+|    │   │   ├── UpdateAdModal.jsx
+|    │   │   └── UpdateAdModal.styles.jsx
+|    │   ├── UpdateProfileModal/
+|    │   │   ├── UpdateProfileModal.jsx
+|    │   │   └── UpdateProfileModal.styles.jsx
+|    │   ├── CreateAdModal/
+|    │   │   ├── CreateAdModal.jsx
+|    │   │   └── CreateAdModal.styles.jsx
+|    │   ├── ConfirmDeleteAdModal/
+|    │   │   ├── ConfirmDeleteAdModal.jsx
+|    │   │   └── ConfirmDeleteAdModal.styles.jsx
+|    │   ├── DeleteAdSuccessModal/
+|    │   │   ├── DeleteAdSuccessModal.jsx
+|    │   │   └── DeleteAdSuccessModal.styles.jsx
+|    │   ├── ConfirmDeleteProfileModal/
+|    │   │   ├── ConfirmDeleteProfileModal.jsx
+|    │   │   └── ConfirmDeleteProfileModal.styles.jsx
+|    │   └── DeleteProfileSuccessModal/
+|    │       ├── DeleteProfileSuccessModal.jsx
+|    │       └── DeleteProfileSuccessModal.styles.jsx  
+|    │
+|    ├── pages/
+|    │   ├── LandingPage/
+|    │   │   ├── LandingPage.jsx
+|    │   │   └── LandingPage.styles.jsx
+|    │   ├── LoginPage/
+|    │   │   ├── LoginPage.jsx
+|    │   │   └── LoginPage.styles.jsx
+|    │   ├── RegisterPage/
+|    │   │   ├── RegisterPage.jsx
+|    │   │   └── RegisterPage.styles.jsx
+|    │   ├── EditeProfilePage/
+|    │   │   ├── EditeProfilePage.jsx
+|    │   │   └── EditeProfilePage.styles.jsx
+|    │   ├── HomePage/
+|    │   │   ├── HomePage.jsx
+|    │   │   └── HomePage.styles.jsx
+|    │   ├── MyProfilePage/
+|    │   │   ├── MyProfilePage.jsx
+|    │   │   └── MyProfilePage.styles.jsx
+|    │   ├── OtherProfilePage/
+|    │   │   ├── OtherProfilePage.jsx
+|    │   │   └── OtherProfilePage.styles.jsx
+|    │   ├── MyExchangePage/
+|    │   │   ├── MyExchangePage.jsx
+|    │   │   └── MyExchangePage.styles.jsx
+|    │   ├── OtherExchangePage/
+|    │   │   ├── OtherExchangePage.jsx
+|    │   │   └── OtherExchangePage.styles.jsx
+|    │   ├── EditeExchangePage/
+|    │   │   ├── EditeExchangePage.jsx
+|    │   │   └── EditeExchangePage.styles.jsx
+|    │   └── ChatPage/
+|    │       ├── ChatPage.jsx
+|    │       └── ChatPage.styles.jsx
+|    │
+|    ├── services/
+|    │   ├── api.jsx
+|    │   ├── exchangeService.jsx
+|    │   ├── messageService.jsx
+|    │   ├── reviewService.jsx
+|    │   └── userService.jsx
+|    |
+|    ├── App.jsx
+|    ├── GlobalStyle.jsx
+|    ├── index.css
+|    └── main.jsx
+|
+└── index.html
+
 ```
 
 
 **Descrição:** :heavy_check_mark:
 
-1. **Assets:** Pastas que contêm recursos estáticos como imagens e fontes.
-2. **components:** Componentes reutilizáveis que formam a interface do usuário.
-3. **Services:** Funções que lidam com chamadas a APIs e lógica de negócios.
-4. **Pages:** Estrutura das diferentes páginas da aplicação.
-5. **App.jsx e GlobalStyle.jsx:** Arquivos principais que definem a aplicação e estilos globais.
+1. **src/ Diretório Raiz**
+- O diretório src/ é a raiz do código fonte do frontend e contém subdiretórios e arquivos responsáveis pelo funcionamento da aplicação.
+
+2. **assets/**
+- Descrição: Contém todos os arquivos de mídia e recursos estáticos, como imagens, ícones, fontes, etc.
+Exemplo de Conteúdo: Logo da aplicação, ícones para navegação, e imagens de fundo.
+
+3. **components/**
+- Descrição: Este diretório contém todos os componentes reutilizáveis da aplicação. Cada componente tem seu próprio subdiretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
+Subdiretórios e Arquivos em components/
+
+- Button/:
+  - Button.jsx: Define o componente de botão reutilizável.
+  - Button.styles.jsx: Contém os estilos específicos para o botão usando styled-components.
+  
+- InputField/:
+  - InputField.jsx: Componente para campos de entrada de texto.
+  - InputField.styles.jsx: Estilos personalizados para campos de entrada.
+
+- TextArea/:
+  - TextArea.jsx: Componente para áreas de texto maiores, como descrições.
+  - TextArea.styles.jsx: Estilos específicos para o componente de área de texto.
+
+- Card/:
+  - Card.jsx: Um componente de cartão reutilizável para exibir informações.
+  - Card.styles.jsx: Estilos para o layout e aparência dos cartões.
+
+- ProfileCard/:
+  - ProfileCard.jsx: Componente de cartão específico para exibir informações do perfil do usuário.
+  - ProfileCard.styles.jsx: Estilos para o componente ProfileCard.
+
+- Navbar/:
+  - Navbar.jsx: Barra de navegação principal da aplicação.
+  - Navbar.styles.jsx: Estilos específicos para a barra de navegação.
+
+- NavbarLanding/:
+  - NavbarLanding.jsx: Barra de navegação para a página de aterrissagem.
+  - NavbarLanding.styles.jsx: Estilos específicos para a NavbarLanding.
+
+- DropdownMenu/:
+  - DropdownMenu.jsx: Componente para menus suspensos.
+  - DropdownMenu.styles.jsx: Estilos para o menu suspenso.
+
+- Footer/:
+  - Footer.jsx: Rodapé da aplicação.
+  - Footer.styles.jsx: Estilos para o rodapé.
+
+- ReviewStars/:
+  - ReviewStars.jsx: Componente para exibir estrelas de avaliação.
+  - ReviewStars.styles.jsx: Estilos para o componente de estrelas de avaliação.
+
+- ChatBubble/:
+  - ChatBubble.jsx: Componente para exibir balões de chat.
+  - ChatBubble.styles.jsx: Estilos para os balões de chat.
+
+4. **modals/**
+- Descrição: Contém componentes modais que são usados para várias operações CRUD (Create, Read, Update, Delete) e outras interações críticas.
+- UpdateAdModal.jsx: Modal para atualizar um anúncio.
+- UpdateProfileModal.jsx: Modal para atualizar o perfil do usuário.
+- CreateAdModal.jsx: Modal para criar um novo anúncio.
+- DeleteAdModal.jsx: Modal para confirmar a exclusão de um anúncio.
+- DeleteProfileModal.jsx: Modal para confirmar a exclusão do perfil do usuário.
+
+5. **pages/**
+- Descrição: Contém os componentes de página principais da aplicação. Cada página é um diretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
+Subdiretórios e Arquivos em pages/
+
+- LandingPage/:
+  - LandingPage.jsx: Página de aterrissagem com informações iniciais sobre a aplicação.
+  - LandingPage.styles.jsx: Estilos para a página de aterrissagem.
+
+- LoginPage/:
+  - LoginPage.jsx: Página de login para autenticação do usuário.
+  - LoginPage.styles.jsx: Estilos para a página de login.
+
+- RegisterPage/:
+  - RegisterPage.jsx: Página de registro para criar uma nova conta de usuário.
+  - RegisterPage.styles.jsx: Estilos para a página de registro.
+
+- HomePage/:
+  - HomePage.jsx: Página inicial após o login, exibindo todos os anúncios ativos.
+  - HomePage.styles.jsx: Estilos para a página inicial.
+
+- MyProfilePage/:
+  - MyProfilePage.jsx: Página de perfil do usuário.
+  - MyProfilePage.styles.jsx: Estilos para a página de perfil do usuário.
+
+- OtherProfilePage/:
+  - OtherProfilePage.jsx: Página de perfil de outros usuários.
+  - OtherProfilePage.styles.jsx: Estilos para a página de perfil de outros usuários.
+
+- ChatPage/:
+  - ChatPage.jsx: Página de chat para comunicação entre usuários.
+  - ChatPage.styles.jsx: Estilos para a página de chat.
+
+6. **services/**
+- Descrição: Contém funções para interagir com a API backend. Essas funções fazem chamadas HTTP para endpoints específicos usando a biblioteca Axios.
+  
+Arquivos em services/
+- api.jsx: Configuração básica do Axios para definir a URL base e os cabeçalhos padrão.
+- exchangeService.jsx: Funções para interagir com a API de anúncios (exchanges), como obter, criar, atualizar e deletar anúncios.
+- messageService.jsx: Funções para gerenciar mensagens, como enviar mensagens, obter mensagens de um anúncio e marcar mensagens como lidas.
+- reviewService.jsx: Funções para criar, obter, atualizar, deletar e curtir avaliações.
+- userService.jsx: Funções para gerenciar usuários, incluindo registro, login, atualização e exclusão de perfis.
+
+7. **Arquivos de Configuração e Entrada**
+- App.jsx: Componente raiz da aplicação que define as rotas usando React Router. Gerencia a navegação entre diferentes páginas da aplicação.
+- GlobalStyle.jsx: Define estilos globais usando styled-components para manter uma aparência consistente em toda a aplicação.
+- index.css: Contém estilos globais básicos, como reset de CSS e definições de tipografia.
+- main.jsx: Ponto de entrada principal da aplicação React. Renderiza o componente App dentro do ThemeProvider para aplicar temas globais.
+- index.html: Arquivo HTML principal que carrega a aplicação React. Contém a div raiz (<div id="root"></div>) onde o React renderiza a aplicação.
+
 
 
 ## Instação das depedências :arrow_down_small:

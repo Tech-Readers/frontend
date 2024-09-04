@@ -1,12 +1,17 @@
-import AppRoutes from "./Routes";
+import RoutesComponent from "./routes/routes";
 import "./index.css";
 
 function App() {
     return (
         <>
-            <AppRoutes />
+            <RoutesComponent />
         </>
     );
 }
 
 export default App;
+
+
+
+
+

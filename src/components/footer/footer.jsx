@@ -1,21 +1,15 @@
-// src/components/footer/footer.jsx:
-import React from "react";
-import { DivColumn } from "../../AppStyle";
-import { FooterContainer, FooterText } from "./Style";
+import React from 'react';
+import { StyledFooter } from './Footer.styles';
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterText>Conectando leitores desde 2024.</FooterText>
-            <DivColumn style={{ gap: "10px" }}>
-                <FooterText>The MIT License (MIT)</FooterText>
-                <FooterText>Tech Reader</FooterText>
-                <FooterText>Instituto Atlantico</FooterText>
-
-                <FooterText>Avanti</FooterText>
-            </DivColumn>
-        </FooterContainer>
-    );
+  return (
+    <StyledFooter>
+      <p>© 2024 Conectando Leitores. Todos os direitos reservados.</p>
+    </StyledFooter>
+  );
 };
 
 export default Footer;
+
+
+
