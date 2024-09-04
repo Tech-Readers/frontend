@@ -5,7 +5,7 @@ import * as S from './RegisterPage.styles';
 import { createUser } from '../../services/userService';
 import { useNavigate } from 'react-router-dom';
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
-
+import CreateProfileModal from '../../Modals/CreateProfileModal/CreateProfileModal';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -25,6 +25,8 @@ const RegisterPage = () => {
     },
     telefones: [{ contato: '' }]
   });
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,19 +52,29 @@ const RegisterPage = () => {
     if (userData.senha !== userData.confirmarSenha) {
       alert('As senhas não coincidem!');
       return;
+    } else if (userData.senha.length <= 6) {
+      alert('Senha deve ter mais de 6 caracteres');
+      return;
     }
 
+    const { confirmarSenha, ...userDataToSubmit } = userData;
+
     try {
-      await createUser(userData);
-      alert('Usuário cadastrado com sucesso!');
-      window.location.href = '/login';
+      await createUser(userDataToSubmit);
+      setShowSuccessModal(true);
     } catch (error) {
+      console.error('Erro ao cadastrar usuário:', error);
       alert('Erro ao cadastrar usuário.');
     }
   };
 
   const handleBack = () => {
     navigate('/');
+  };
+
+  const handleCloseModal = () => {
+    setShowSuccessModal(false);
+    navigate('/login');
   };
 
   return (
@@ -100,14 +112,33 @@ const RegisterPage = () => {
               />
             </S.InputFieldWrapper>
           ))}
+
+          <S.InputFieldWrapper>
+            <S.InputLabel>Telefone de Contato:</S.InputLabel>
+            <InputField 
+              placeholder="Insira seu telefone de contato"
+              name="telefones"
+              type="text"
+              value={userData.telefones[0].contato}
+              onChange={handleChange}
+            />
+          </S.InputFieldWrapper>
+
           <Button onClick={handleRegister}>Cadastrar</Button>
         </S.RegisterBox>
       </S.RightContainer>
+
+      {showSuccessModal && (
+        <CreateProfileModal onConfirm={handleCloseModal} />
+      )}
     </S.PageContainer>
   );
 };
 
 export default RegisterPage;
+
+
+
 
 
 
