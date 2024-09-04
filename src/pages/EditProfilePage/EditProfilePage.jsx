@@ -22,6 +22,7 @@ import { useNavigate } from 'react-router-dom';
 const EditProfilePage = () => {
   const [userData, setUserData] = useState({
     nome: '',
+    bio: '',
     email: '',
     senha: '',
     image: null, 
@@ -48,6 +49,7 @@ const EditProfilePage = () => {
       setUserData({
         ...data,
         nome: data.nome || '', 
+        bio: data.bio || '',
         email: data.email || '', 
         senha: '', 
         image: data.image ? data.image : null, 
@@ -92,6 +94,7 @@ const EditProfilePage = () => {
   const handleUpdate = async () => {
     const formData = new FormData();
     formData.append('nome', userData.nome);
+    formData.append('bio', userData.bio);
     formData.append('email', userData.email);
     formData.append('senha', userData.senha);
   
@@ -150,6 +153,11 @@ const EditProfilePage = () => {
           <InputGroup>
             <LabelStyled>Nome</LabelStyled>
             <InputField placeholder="Nome" name="nome" value={userData.nome} onChange={handleChange} />
+          </InputGroup>
+
+          <InputGroup>
+            <LabelStyled>Bio</LabelStyled>
+            <InputField placeholder="Bio" name="bio" value={userData.bio} onChange={handleChange} />
           </InputGroup>
 
           <InputGroup>
