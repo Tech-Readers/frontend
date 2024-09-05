@@ -187,7 +187,6 @@ Exemplo de Conteúdo: Logo da aplicação, ícones para navegação, e imagens d
 
 3. **Componentes Reutilizáveis (components/)**
 - Descrição: Este diretório contém todos os componentes reutilizáveis da aplicação. Cada componente tem seu próprio subdiretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
-Subdiretórios e Arquivos em components/
 
 - Button/:
   - Button.jsx: Define o componente de botão reutilizável.
@@ -235,6 +234,7 @@ Subdiretórios e Arquivos em components/
 
 4. **Modais (modals/)**
 - Descrição: Contém componentes modais que são usados para várias operações CRUD (Create, Read, Update, Delete) e outras interações críticas.
+  
 - UpdateAdModal.jsx: Modal para atualizar um anúncio.
 - UpdateProfileModal.jsx: Modal para atualizar o perfil do usuário.
 - CreateAdModal.jsx: Modal para criar um novo anúncio.
@@ -243,7 +243,6 @@ Subdiretórios e Arquivos em components/
 
 5. **Páginas Principais (pages/)**
 - Descrição: Contém os componentes de página principais da aplicação. Cada página é um diretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
-Subdiretórios e Arquivos em pages/
 
 - LandingPage/:
   - LandingPage.jsx: Página de aterrissagem com informações iniciais sobre a aplicação.
@@ -275,12 +274,12 @@ Subdiretórios e Arquivos em pages/
 
 6. **Utilitários de Funções Auxiliares(utils/)**
 - Descrição: Utilitários de funções auxiliares.
+  
 - Cookie.jsx: Funções para manipulação de cookies e autenticação de sessão.
 
 7. **Serviços (services/)**
 - Descrição: Contém funções para interagir com a API backend. Essas funções fazem chamadas HTTP para endpoints específicos usando a biblioteca Axios.
   
-Arquivos em services/
 - api.jsx: Configuração básica do Axios para definir a URL base e os cabeçalhos padrão.
 - exchangeService.jsx: Funções para interagir com a API de anúncios (exchanges), como obter, criar, atualizar e deletar anúncios.
 - messageService.jsx: Funções para gerenciar mensagens, como enviar mensagens, obter mensagens de um anúncio e marcar mensagens como lidas.
@@ -293,7 +292,6 @@ Arquivos em services/
 - index.css: Contém estilos globais básicos, como reset de CSS e definições de tipografia.
 - main.jsx: Ponto de entrada principal da aplicação React. Renderiza o componente App dentro do ThemeProvider para aplicar temas globais.
 - index.html: Arquivo HTML principal que carrega a aplicação React. Contém a div raiz (<div id="root"></div>) onde o React renderiza a aplicação.
-
 
 
 ## Instação das depedências :arrow_down_small:
