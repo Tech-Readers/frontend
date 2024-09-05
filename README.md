@@ -178,14 +178,14 @@ Conectando Leitores
 
 **Descrição:** :heavy_check_mark:
 
-1. **src/ Diretório Raiz**
+1. **Diretório Raiz (src/)**
 - O diretório src/ é a raiz do código fonte do frontend e contém subdiretórios e arquivos responsáveis pelo funcionamento da aplicação.
 
-2. **assets/**
+2. **Recursos Estáticos (assets/)**
 - Descrição: Contém todos os arquivos de mídia e recursos estáticos, como imagens, ícones, fontes, etc.
 Exemplo de Conteúdo: Logo da aplicação, ícones para navegação, e imagens de fundo.
 
-3. **components/**
+3. **Componentes Reutilizáveis (components/)**
 - Descrição: Este diretório contém todos os componentes reutilizáveis da aplicação. Cada componente tem seu próprio subdiretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
 Subdiretórios e Arquivos em components/
 
@@ -233,7 +233,7 @@ Subdiretórios e Arquivos em components/
   - ChatBubble.jsx: Componente para exibir balões de chat.
   - ChatBubble.styles.jsx: Estilos para os balões de chat.
 
-4. **modals/**
+4. **Modais (modals/)**
 - Descrição: Contém componentes modais que são usados para várias operações CRUD (Create, Read, Update, Delete) e outras interações críticas.
 - UpdateAdModal.jsx: Modal para atualizar um anúncio.
 - UpdateProfileModal.jsx: Modal para atualizar o perfil do usuário.
@@ -241,7 +241,7 @@ Subdiretórios e Arquivos em components/
 - DeleteAdModal.jsx: Modal para confirmar a exclusão de um anúncio.
 - DeleteProfileModal.jsx: Modal para confirmar a exclusão do perfil do usuário.
 
-5. **pages/**
+5. **Páginas Principais (pages/)**
 - Descrição: Contém os componentes de página principais da aplicação. Cada página é um diretório com um arquivo principal (.jsx) e um arquivo de estilo associado (.styles.jsx).
 Subdiretórios e Arquivos em pages/
 
@@ -273,7 +273,11 @@ Subdiretórios e Arquivos em pages/
   - ChatPage.jsx: Página de chat para comunicação entre usuários.
   - ChatPage.styles.jsx: Estilos para a página de chat.
 
-6. **services/**
+6. **Utilitários de Funções Auxiliares(utils/)**
+- Descrição: Utilitários de funções auxiliares.
+- Cookie.jsx: Funções para manipulação de cookies e autenticação de sessão.
+
+7. **Serviços (services/)**
 - Descrição: Contém funções para interagir com a API backend. Essas funções fazem chamadas HTTP para endpoints específicos usando a biblioteca Axios.
   
 Arquivos em services/
@@ -283,7 +287,7 @@ Arquivos em services/
 - reviewService.jsx: Funções para criar, obter, atualizar, deletar e curtir avaliações.
 - userService.jsx: Funções para gerenciar usuários, incluindo registro, login, atualização e exclusão de perfis.
 
-7. **Arquivos de Configuração e Entrada**
+8. **Arquivos de Configuração e Entrada**
 - App.jsx: Componente raiz da aplicação que define as rotas usando React Router. Gerencia a navegação entre diferentes páginas da aplicação.
 - GlobalStyle.jsx: Define estilos globais usando styled-components para manter uma aparência consistente em toda a aplicação.
 - index.css: Contém estilos globais básicos, como reset de CSS e definições de tipografia.
