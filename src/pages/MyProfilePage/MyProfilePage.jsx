@@ -25,12 +25,14 @@ import {
 import CardAnuncios from '../../components/Card/CardAnuncios';
 import defaultProfileImg from '../../assets/profile.svg';
 import CardAvaliacoes from '../../components/Card/CardAvaliacoes';
+import DeleteAdSuccessModal from '../../Modals/DeleteAdSuccessModal/DeleteAdSuccessModal'; // modificado
 
 const MyProfilePage = () => {
   const [profileData, setProfileData] = useState(null);
   const [exchanges, setExchanges] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [selectedExchange, setSelectedExchange] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // modificado
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -69,7 +71,12 @@ const MyProfilePage = () => {
   const removeExchange = (exchangeId) => {
     setExchanges((prevExchanges) => prevExchanges.filter((exchange) => exchange.id !== exchangeId));
     setSelectedExchange(null); // Fecha o card aberto
+    setShowSuccessModal(true); // modificado - Abre o modal de sucesso após a remoção
   };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+  }; // modificado
 
   return (
     <>
@@ -113,6 +120,12 @@ const MyProfilePage = () => {
             <CardAvaliacoes key={review.id} review={review} />
           ))}
         </ReviewsContainer>
+
+        {/* modificação */}
+        {showSuccessModal && (
+          <DeleteAdSuccessModal onClose={handleSuccessClose} />
+        )} 
+        
       </PageContainer>
       <Footer />
     </>

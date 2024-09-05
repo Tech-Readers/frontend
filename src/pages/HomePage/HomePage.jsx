@@ -5,10 +5,12 @@ import Footer from '../../components/Footer/Footer';
 import * as S from './HomePage.styles';
 import { getAllExchanges } from '../../services/exchangeService';
 import HeaderImage from '../../assets/HEADER.svg';
+import DeleteAdSuccessModal from '../../Modals/DeleteAdSuccessModal/DeleteAdSuccessModal'; // modificado
 
 const HomePage = () => {
   const [exchanges, setExchanges] = useState([]);
   const [selectedExchange, setSelectedExchange] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // modificado
 
   useEffect(() => {
     const fetchExchanges = async () => {
@@ -31,7 +33,12 @@ const HomePage = () => {
   const removeExchange = (exchangeId) => {
     setExchanges((prevExchanges) => prevExchanges.filter((exchange) => exchange.id !== exchangeId));
     setSelectedExchange(null); // Fecha o card aberto
+    setShowSuccessModal(true); // modificado - Abre o modal de sucesso após a remoção
   };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+  }; // modificado
 
   return (
     <S.PageContainer>
@@ -59,6 +66,12 @@ const HomePage = () => {
             />
           ))}
         </S.CardGrid>
+        
+        {/* modificação */}
+        {showSuccessModal && (
+          <DeleteAdSuccessModal onClose={handleSuccessClose} />
+        )} 
+
       </S.MainContent>
       <Footer />
     </S.PageContainer>
