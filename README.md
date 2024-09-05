@@ -58,9 +58,10 @@ Conectando Leitores
 |    │   │   ├── TextArea.jsx
 |    │   │   └── TextArea.styles.jsx
 |    │   ├── Card/
-|    │   │   ├── Card.jsx
-|    │   │   └── Card.styles.jsx
-|    │   ├── ProfileCard/
+|    │   │   ├── CardAnuncios.jsx
+|    │   │   ├── CardAnuncios.styles.jsx
+|    │   │   ├── CardAvaliacoes.jsx
+|    │   │   ├── CardAvaliacoes.styles.jsx
 |    │   │   ├── ProfileCard.jsx
 |    │   │   └── ProfileCard.styles.jsx
 |    │   ├── Navbar/
@@ -78,6 +79,9 @@ Conectando Leitores
 |    │   ├── ReviewStars/
 |    │   │   ├── ReviewStars.jsx
 |    │   │   └── ReviewStars.styles.jsx
+|    │   ├── ChatPreview/
+|    │   │   ├── ChatPreview.jsx
+|    │   │   └── ChatPreview.styles.jsx
 |    │   └── ChatBubble/
 |    │       ├── ChatBubble.jsx
 |    │       └── ChatBubble.styles.jsx
@@ -92,6 +96,9 @@ Conectando Leitores
 |    │   ├── CreateAdModal/
 |    │   │   ├── CreateAdModal.jsx
 |    │   │   └── CreateAdModal.styles.jsx
+|    │   ├── CreateProfileModal/
+|    │   │   ├── CreateProfileModal.jsx
+|    │   │   └── CreateProfileModal.styles.jsx
 |    │   ├── ConfirmDeleteAdModal/
 |    │   │   ├── ConfirmDeleteAdModal.jsx
 |    │   │   └── ConfirmDeleteAdModal.styles.jsx
@@ -118,6 +125,12 @@ Conectando Leitores
 |    │   ├── EditeProfilePage/
 |    │   │   ├── EditeProfilePage.jsx
 |    │   │   └── EditeProfilePage.styles.jsx
+|    │   ├── CriarAnuncio/
+|    │   │   ├── CriarAnuncio.jsx
+|    │   │   └── CriarAnuncio.styles.jsx
+|    │   ├── AtualizarAnuncio/
+|    │   │   ├── AtualizarAnuncio.jsx
+|    │   │   └── AtualizarAnuncio.styles.jsx
 |    │   ├── HomePage/
 |    │   │   ├── HomePage.jsx
 |    │   │   └── HomePage.styles.jsx
@@ -127,19 +140,22 @@ Conectando Leitores
 |    │   ├── OtherProfilePage/
 |    │   │   ├── OtherProfilePage.jsx
 |    │   │   └── OtherProfilePage.styles.jsx
-|    │   ├── MyExchangePage/
-|    │   │   ├── MyExchangePage.jsx
-|    │   │   └── MyExchangePage.styles.jsx
-|    │   ├── OtherExchangePage/
-|    │   │   ├── OtherExchangePage.jsx
-|    │   │   └── OtherExchangePage.styles.jsx
-|    │   ├── EditeExchangePage/
-|    │   │   ├── EditeExchangePage.jsx
-|    │   │   └── EditeExchangePage.styles.jsx
+|    │   ├── MyAdsPage/
+|    │   │   ├── MyAdsPage.jsx
+|    │   │   └── MyAdsPage.styles.jsx
+|    │   ├── OtherUserAdsPage/
+|    │   │   ├── OtherUserAdsPage.jsx
+|    │   │   └── OtherUserAdsPage.styles.jsx
+|    │   ├── AllChatPage/
+|    │   │   ├── AllChatPage.jsx
+|    │   │   └── AllChatPage.styles.jsx
 |    │   └── ChatPage/
 |    │       ├── ChatPage.jsx
 |    │       └── ChatPage.styles.jsx
-|    │
+|    |
+|    ├── utils/
+|    │   └── Cookie.jsx
+|    |
 |    ├── services/
 |    │   ├── api.jsx
 |    │   ├── exchangeService.jsx
