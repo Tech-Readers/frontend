@@ -57,7 +57,8 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
 
   const handleDeleteConfirm = async () => {
     if (onDelete) {
-      onDelete(data.id);
+      await onDelete(data.id); // modificação: Deleta o anúncio corretamente
+      setShowDeleteModal(false); // modificação
       setShowSuccessModal(true);
     }
   };

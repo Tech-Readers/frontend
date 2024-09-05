@@ -11,10 +11,13 @@ import {
   SelectedCard,
   CloseButton
 } from './MyAdsPage.styles';
+import DeleteAdSuccessModal from '../../Modals/DeleteAdSuccessModal/DeleteAdSuccessModal'; // modificado
 
 const MyAdsPage = () => {
   const [exchanges, setExchanges] = useState([]);
   const [selectedExchange, setSelectedExchange] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // modificado
+
 
   useEffect(() => {
     const fetchUserExchanges = async () => {
@@ -41,7 +44,12 @@ const MyAdsPage = () => {
   const removeExchange = (exchangeId) => {
     setExchanges((prevExchanges) => prevExchanges.filter((exchange) => exchange.id !== exchangeId));
     setSelectedExchange(null); // Fecha o card aberto
+    setShowSuccessModal(true); // modificado - Abre o modal de sucesso após a remoção
   };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+  }; // modificado
 
   return (
     <>
@@ -67,6 +75,10 @@ const MyAdsPage = () => {
             />
           ))}
         </ExchangesContainer>
+        {/* modificação */}
+        {showSuccessModal && (
+          <DeleteAdSuccessModal onClose={handleSuccessClose} />
+        )} 
       </PageContainer>
       <Footer />
     </>
