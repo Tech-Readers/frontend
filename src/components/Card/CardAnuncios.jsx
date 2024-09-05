@@ -16,7 +16,7 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
   const [userInfo, setUserInfo] = useState({ name: '', image: defaultProfileImg });
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [isActive, setIsActive] = useState(data.ativo); // Estado local para controlar o estado "ativo" do anúncio
+  const [isActive, setIsActive] = useState(data.ativo); // estado local para controlar o estado "ativo" do anúncio
   const navigate = useNavigate();
 
   const userId = getCookie('userId');
@@ -78,7 +78,8 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
   const handleToggleClick = async () => {
     try {
       const updatedData = await stateExchange(data.id);
-      setIsActive(updatedData.ativo); // Atualiza o estado local com o novo estado do anúncio
+      setIsActive(updatedData.ativo); // atualiza o estado local com o novo estado do anúncio
+      data.ativo = updatedData.ativo; // modifica diretamente o objeto de dados para refletir na interface
     } catch (error) {
       console.error('Erro ao alternar o estado do anúncio:', error);
     }
@@ -98,7 +99,7 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
             <ToggleButtonContainer>
               <img 
                 src={isActive ? toggleOn : toggleOff} 
-                alt={isActive ? "Desativar" : "Ativar"} 
+                alt={isActive ? "Desativar" : "Ativar"}
                 onClick={handleToggleClick} 
                 style={{ cursor: 'pointer', width: '24px', height: '24px' }}
               />
