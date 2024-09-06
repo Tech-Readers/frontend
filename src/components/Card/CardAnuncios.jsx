@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { AdCard, ProfileAnuncio, AnuncioImage, SelectedAdCard, SelectedAnuncioInfo, ButtonContainer, EditButton, DeleteButton, MessageButton, ToggleButtonContainer } from "./CardAnuncios.styles";
+import {
+  AdCard, ProfileAnuncio, AnuncioImage, SelectedAdCard,
+  SelectedAnuncioInfo, ButtonContainer, EditButton, DeleteButton,
+  MessageButton, ToggleButtonContainer, ReviewContainer 
+} from "./CardAnuncios.styles";
+
 import defaultProfileImg from '../../assets/profile.svg';
 import defaultBookImg from '../../assets/book-image.svg';
 import { getUserById } from '../../services/userService';
@@ -10,15 +15,21 @@ import DeleteAdSuccessModal from '../../Modals/DeleteAdSuccessModal/DeleteAdSucc
 import toggleOff from '../../assets/toggle-off-solid.svg'; 
 import toggleOn from '../../assets/toggle-on-solid.svg'; 
 import { stateExchange } from '../../services/exchangeService';
-import trashIcon from '../../assets/trash-icon.svg'; // icon lixeira
+import trashIcon from '../../assets/trash-icon.svg';
+import ReviewStars from '../ReviewStars/ReviewStars';
+import { createReview } from '../../services/reviewService';
+import CreateAvaliacaoModal from '../../Modals/CreateAvaliacaoModal/CreateAvaliacaoModal'; 
 
 const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
   const [userInfo, setUserInfo] = useState({ name: '', image: defaultProfileImg });
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [isActive, setIsActive] = useState(data.ativo); // estado local para controlar o estado "ativo" do anúncio
+  const [showAvaliacaoModal, setShowAvaliacaoModal] = useState(false); // estado para controlar o modal de avaliação
+  const [isActive, setIsActive] = useState(data.ativo);
+  const [rating, setRating] = useState(0); 
+  const [comment, setComment] = useState('');
+  const [hasReviewed, setHasReviewed] = useState(false); // controle de avaliação
   const navigate = useNavigate();
-
   const userId = getCookie('userId');
 
   useEffect(() => {
@@ -57,8 +68,8 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
 
   const handleDeleteConfirm = async () => {
     if (onDelete) {
-      await onDelete(data.id); // modificação: Deleta o anúncio corretamente
-      setShowDeleteModal(false); // modificação
+      await onDelete(data.id);
+      setShowDeleteModal(false);
       setShowSuccessModal(true);
     }
   };
@@ -78,16 +89,35 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
   const handleToggleClick = async () => {
     try {
       const updatedData = await stateExchange(data.id);
-      setIsActive(updatedData.ativo); // atualiza o estado local com o novo estado do anúncio
-      data.ativo = updatedData.ativo; // modifica diretamente o objeto de dados para refletir na interface
+      setIsActive(updatedData.ativo);
+      data.ativo = updatedData.ativo;
     } catch (error) {
       console.error('Erro ao alternar o estado do anúncio:', error);
     }
   };
 
-  if (!data) {
-    return <div>Sem informações ainda...</div>;
-  }
+  const handleSubmitReview = async () => {
+    if (rating === 0) {
+      alert('A nota é obrigatória!');
+      return;
+    }
+
+    const reviewData = {
+      nota: rating,
+      comentario: comment,
+      usuario_avaliador_id: userId,
+      anuncio_id: data.id,
+    };
+
+    try {
+      await createReview(reviewData);
+      setHasReviewed(true);
+      setShowAvaliacaoModal(true); // mostrar o modal apos o envio bem sucedido
+    } catch (error) {
+      console.error('Erro ao enviar avaliação:', error);
+      alert('Erro ao enviar avaliação.');
+    }
+  };
 
   const anuncioImage = data.image || defaultBookImg;
 
@@ -108,8 +138,28 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
           <ProfileAnuncio onClick={handleProfileClick} style={{ cursor: 'pointer' }}>
             <img src={userInfo.image} alt="perfil" />
           </ProfileAnuncio>
+
           <SelectedAnuncioInfo>
             <AnuncioImage src={anuncioImage} alt="Anúncio Avaliado" />
+
+            {/* avaliação só será exibida se o usuário não for o dono do anuncio */}
+            {data.anunciante_id !== userId && !hasReviewed && (
+              <ReviewContainer>
+                <h4>Avalie este anúncio:</h4>
+                <div className="stars">
+                  <ReviewStars rating={rating} onClick={(index) => setRating(index)} />
+                </div>
+                <textarea
+                  placeholder="Deixe um comentário (opcional)"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                />
+                <button onClick={handleSubmitReview}>
+                  Enviar Avaliação
+                </button>
+              </ReviewContainer>
+            )}
+
             <div>
               <h3>{data.titulo}</h3>
               <p><strong>Nome do Anunciante:</strong> {userInfo.name}</p>
@@ -130,7 +180,9 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
                     </DeleteButton>
                   </>
                 ) : (
-                  <MessageButton onClick={handleMessageClick}>Enviar Mensagem</MessageButton>
+                  <>
+                    <MessageButton onClick={handleMessageClick}>Enviar Mensagem</MessageButton>
+                  </>
                 )}
               </ButtonContainer>
             </div>
@@ -161,12 +213,14 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
       {showSuccessModal && (
         <DeleteAdSuccessModal onClose={handleSuccessClose} />
       )}
+
+      {showAvaliacaoModal && (
+        <CreateAvaliacaoModal onConfirm={() => setShowAvaliacaoModal(false)} />
+      )}
     </>
   );
 };
 
 export default CardAnuncios;
-
-
 
 

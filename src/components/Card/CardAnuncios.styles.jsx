@@ -1,5 +1,49 @@
 import styled from 'styled-components';
 
+export const ReviewContainer = styled.div`
+  width: 100%;
+  margin-top: 20px;
+
+  h4 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.Preto};
+  }
+
+  .stars {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px; 
+    margin-top: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    height: 80px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #5A645F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4E5653;
+    }
+  }
+`;
+
 export const AdCard = styled.div`
   width: 100%;
   max-width: 250px;
@@ -197,6 +241,5 @@ export const ToggleButtonContainer = styled.div`
   cursor: pointer;
   z-index: 2;
 `;
-
 
 
