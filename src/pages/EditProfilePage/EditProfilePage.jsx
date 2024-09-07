@@ -1,3 +1,4 @@
+// EditProfilePage.jsx:
 import React, { useState, useEffect } from 'react';
 import InputField from '../../components/InputField/InputField';
 import { getUserById, updateUser } from '../../services/userService';
@@ -171,10 +172,14 @@ const EditProfilePage = () => {
           </InputGroup>
 
           <DoubleInputGroup>
-            <LabelStyled>CEP</LabelStyled>
-            <InputField placeholder="CEP" name="enderecos.cep" value={userData.enderecos.cep} onChange={handleChange} />
-            <LabelStyled>Número</LabelStyled>
-            <InputField placeholder="Número" name="enderecos.numero" value={userData.enderecos.numero} onChange={handleChange} />
+            <div>
+              <LabelStyled>CEP</LabelStyled>
+              <InputField placeholder="CEP" name="enderecos.cep" value={userData.enderecos.cep} onChange={handleChange} />
+            </div>
+            <div>
+              <LabelStyled>Número</LabelStyled>
+              <InputField placeholder="Número" name="enderecos.numero" value={userData.enderecos.numero} onChange={handleChange} />
+            </div>
           </DoubleInputGroup>
 
           <InputGroup>
@@ -193,10 +198,14 @@ const EditProfilePage = () => {
           </InputGroup>
 
           <DoubleInputGroup>
-            <LabelStyled>Município</LabelStyled>
-            <InputField placeholder="Município" name="enderecos.municipio" value={userData.enderecos.municipio} onChange={handleChange} />
-            <LabelStyled>UF</LabelStyled>
-            <InputField placeholder="UF" name="enderecos.uf" value={userData.enderecos.uf} onChange={handleChange} />
+            <div>
+              <LabelStyled>Município</LabelStyled>
+              <InputField placeholder="Município" name="enderecos.municipio" value={userData.enderecos.municipio} onChange={handleChange} />
+            </div>
+            <div>
+              <LabelStyled>UF</LabelStyled>
+              <InputField placeholder="UF" name="enderecos.uf" value={userData.enderecos.uf} onChange={handleChange} />
+            </div>
           </DoubleInputGroup>
 
           <InputGroup>
@@ -221,12 +230,6 @@ const EditProfilePage = () => {
 };
 
 export default EditProfilePage;
-
-
-
-
-
-
 
 
 

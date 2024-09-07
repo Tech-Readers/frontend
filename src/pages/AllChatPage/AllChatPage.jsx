@@ -15,7 +15,7 @@ const AllChatPage = () => {
       try {
         const data = await getAllChatsByUserId(userId);
         
-        // Agrupa as mensagens por outro usuario envolvido no chat
+        // agrupa as mensagens por outro usuario envolvido no chat
         const groupedChats = data.reduce((acc, message) => {
           const otherUserId = message.usuario_remetente_id === userId 
             ? message.usuario_destinatario_id 
@@ -56,9 +56,6 @@ const AllChatPage = () => {
 };
 
 export default AllChatPage;
-
-
-
 
 
 

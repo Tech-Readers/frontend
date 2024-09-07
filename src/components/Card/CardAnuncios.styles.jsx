@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ReviewContainer = styled.div`
   width: 100%;
   margin-top: 20px;
+  // padding-left: 60px; 
 
   h4 {
     margin-bottom: 10px;
@@ -59,13 +60,15 @@ export const AdCard = styled.div`
   overflow: visible;
   cursor: pointer;
   position: relative;
+  
 
   img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+    
   }
 
   h3 {
@@ -125,6 +128,7 @@ export const AnuncioImage = styled.img`
   border-radius: 8px;
   margin-bottom: 15px;
   margin-top: 30px;
+  // padding-left: 60px; 
 `;
 
 export const SelectedAdCard = styled.div`
@@ -139,37 +143,24 @@ export const SelectedAdCard = styled.div`
   position: relative;
 `;
 
-export const SelectedAnuncioInfo = styled.div`
+export const AdContent = styled.div`
   display: flex;
-  align-items: center;
+  gap: 40px; /* espaçamento entre a imagem e as informações */
+`;
+
+export const AdDetails = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  gap: 20px;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: ${({ theme }) => theme.colors.Preto};
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: grey;
-    margin-bottom: 10px;
-    line-height: 1.2;
-    text-align: justify;
-  }
+  gap: 10px;
+  padding-top: 30px;
+  padding-left: 100px; /*  padding para empurrar as informações para a direita */
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 10px;
-  margin-top: 20px;
+  padding-top: 80px;
   width: 100%;
 `;
 
@@ -241,5 +232,27 @@ export const ToggleButtonContainer = styled.div`
   cursor: pointer;
   z-index: 2;
 `;
+
+export const SelectedAnuncioInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: ${({ theme }) => theme.colors.Preto};
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: grey;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-align: justify;
+  }
+`;
+
+
 
 

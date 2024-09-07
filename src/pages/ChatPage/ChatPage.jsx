@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ChatBubble from '../../components/ChatBubble/ChatBubble';
 import InputField from '../../components/InputField/InputField';
 import Button from '../../components/Button/Button';
-import { getMessagesBetweenUsers, createMessage } from '../../services/messageService';
+import { getMessagesBetweenUsers, createMessage, markMessageAsRead } from '../../services/messageService'; 
 import { getCookie } from '../../utils/Cookie';
 import { useParams } from 'react-router-dom';
 import { getUserById } from '../../services/userService';
@@ -24,15 +24,37 @@ const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [userImages, setUserImages] = useState({ sender: null, receiver: null });
-  const { id } = useParams();
-  const userId = getCookie('userId');
+  const { id } = useParams();  // ID do outro usuário
+  const userId = getCookie('userId');  // ID do usuário logado
+
+  // Função para marcar mensagens como lidas
+  const markMessagesAsRead = async (unreadMessages) => {
+    try {
+      for (const message of unreadMessages) {
+        await markMessageAsRead(message.id);
+      }
+    } catch (error) {
+      console.error('Erro ao marcar mensagem como lida:', error);
+    }
+  };
 
   useEffect(() => {
     const fetchMessages = async () => {
       try {
         const data = await getMessagesBetweenUsers(userId, id); 
         const sortedMessages = data.sort((a, b) => new Date(a.data_envio) - new Date(b.data_envio));
+
         setMessages(sortedMessages);
+
+        // filtrar mensagens ñ lidas que pertencem ao usuario logado como destinatario
+        const unreadMessages = sortedMessages.filter(
+          (msg) => !msg.lido && msg.usuario_destinatario_id === userId
+        );
+
+        if (unreadMessages.length > 0) {
+          // marca  todas as mensagens não lidas como lidas
+          await markMessagesAsRead(unreadMessages);
+        }
       } catch (error) {
         console.error('Erro ao obter mensagens:', error);
       }
@@ -53,7 +75,7 @@ const ChatPage = () => {
 
     fetchMessages();
     fetchUserImages();
-  }, [id]);
+  }, [id, userId]);  //  quando o ID do usuário ou o ID do destinatário mudar
 
   const handleSendMessage = async () => {
     const messageData = {
@@ -110,10 +132,5 @@ const ChatPage = () => {
 };
 
 export default ChatPage;
-
-
-
-
-
 
 
