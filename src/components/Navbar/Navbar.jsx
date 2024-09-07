@@ -8,7 +8,10 @@ import {
   NavLinks,
   NavLink,
   ChatNotificationBadge,
-} from './Navbar.styles';
+  ResultsContainer, 
+  ResultsTitle,
+  CardGrid
+} from './Navbar.styles'; 
 import logoImg from '../../assets/LOGO-TECH-READERS.svg';
 import searchIcon from '../../assets/search-icon.svg';
 import chatIcon from '../../assets/chat-icon.svg';
@@ -16,9 +19,10 @@ import adIcon from '../../assets/ad-anuncio-icon.svg';
 import starIcon from '../../assets/star-icon.svg';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
 import { useNavigate } from 'react-router-dom';
-import { getAllExchanges } from '../../services/exchangeService'; 
+import { getAllExchanges } from '../../services/exchangeService';
 import { getUnreadMessagesCount } from '../../services/messageService';
 import { getCookie } from '../../utils/Cookie';
+import CardAnuncios from '../../components/Card/CardAnuncios';
 
 const MenuNav = () => {
   const navigate = useNavigate();
@@ -113,6 +117,21 @@ const MenuNav = () => {
           <DropdownMenu />
         </NavLinks>
       </Nav>
+      {/* renderizar resultados filtrados se houver termos de busca */}
+      {searchTerm && (
+        <ResultsContainer>
+          <ResultsTitle>RESULTADO DA PESQUISA</ResultsTitle>
+          <CardGrid>
+            {filteredExchanges.length > 0 ? (
+              filteredExchanges.map((exchange) => (
+                <CardAnuncios key={exchange.id} data={exchange} />
+              ))
+            ) : (
+              <p>Nenhum anúncio encontrado.</p>
+            )}
+          </CardGrid>
+        </ResultsContainer>
+      )}
     </>
   );
 };
