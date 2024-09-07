@@ -1,4 +1,23 @@
-import api from './api';	
+import api from './api';
+
+
+// Obtém todas as conversas e filtra as mensagens não lidas
+export const getUnreadMessagesCount = async (userId) => {
+  try {
+    const response = await api.get(`/messages/all`, { params: { userId } });
+    const allMessages = response.data;
+
+    // filtrar as mensagens que não foram lidas e que o usuário é o destinatário
+    const unreadMessages = allMessages.filter(
+      (message) => !message.lido && message.usuario_destinatario_id === userId
+    );
+
+    return unreadMessages.length; // retorna a quantidade de mensagens não lidas
+  } catch (error) {
+    console.error('Erro ao obter mensagens não lidas:', error);
+    throw error;
+  }
+};
 
 
 // Adicione um novo serviço para obter mensagens entre dois usuários

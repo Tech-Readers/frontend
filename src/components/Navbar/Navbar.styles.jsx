@@ -51,6 +51,7 @@ export const NavLink = styled.div`
   align-items: center;
   color: #686868;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     color: ${({ theme }) => theme.colors.VerdeEscuro};
@@ -62,40 +63,20 @@ export const NavLink = styled.div`
   }
 `;
 
-export const ProfileImage = styled.img`
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  margin-left: 10px;
+export const ChatNotificationBadge = styled.span`
+  position: absolute;
+  top: -8px;
+  left: -12px; /* posicionar à esquerda */
+  background-color: red;
+  color: white;
+  border-radius: 60%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 10px;
+  min-height: 10px;
+  text-align: center;
 `;
-
-// Novos estilos para o resultado da pesquisa
-export const ResultsContainer = styled.div`
-  padding: 20px;
-  margin-top: 80px; /* Ajuste de margem para compensar o navbar fixo */
-`;
-
-export const ResultsTitle = styled.h2`
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.colors.Preto};
-  text-align: left;
-  padding-left: 10px;
-`;
-
-export const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Limita a três colunas */
-  gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* Ajusta para duas colunas em telas menores */
-  }
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* Ajusta para uma coluna em telas muito pequenas */
-  }
-`;
-
-
 
 

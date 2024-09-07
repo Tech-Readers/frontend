@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Nav,
   Logo,
@@ -7,9 +7,7 @@ import {
   SearchBar,
   NavLinks,
   NavLink,
-  ResultsContainer,
-  ResultsTitle,
-  CardGrid,
+  ChatNotificationBadge,
 } from './Navbar.styles';
 import logoImg from '../../assets/LOGO-TECH-READERS.svg';
 import searchIcon from '../../assets/search-icon.svg';
@@ -18,13 +16,32 @@ import adIcon from '../../assets/ad-anuncio-icon.svg';
 import starIcon from '../../assets/star-icon.svg';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
 import { useNavigate } from 'react-router-dom';
-import { getAllExchanges } from '../../services/exchangeService'; // Importa a função para obter todos os anúncios
-import CardAnuncios from '../../components/Card/CardAnuncios'; // Adicionando a importação do CardAnuncios
+import { getAllExchanges } from '../../services/exchangeService'; 
+import { getUnreadMessagesCount } from '../../services/messageService';
+import { getCookie } from '../../utils/Cookie';
 
 const MenuNav = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredExchanges, setFilteredExchanges] = useState([]);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  const userId = getCookie('userId'); // obter o ID do usuário logado
+
+  useEffect(() => {
+    const fetchUnreadMessages = async () => {
+      if (userId) {
+        try {
+          const count = await getUnreadMessagesCount(userId); // obter a contagem de mensagens não lidas
+          setUnreadCount(count);
+        } catch (error) {
+          console.error('Erro ao buscar mensagens não lidas:', error);
+        }
+      }
+    };
+
+    fetchUnreadMessages();
+  }, [userId]); // executa quando o userId mudar
 
   const handleClick = (path) => {
     navigate(path);
@@ -35,7 +52,7 @@ const MenuNav = () => {
   };
 
   const handleSearchSubmit = async () => {
-    if (searchTerm.trim() === '') return; // Se a barra de pesquisa estiver vazia, não fazer nada
+    if (searchTerm.trim() === '') return;
     try {
       const exchanges = await getAllExchanges();
       const filtered = exchanges.filter((exchange) =>
@@ -79,6 +96,9 @@ const MenuNav = () => {
         </SearchBarContainer>
         <NavLinks>
           <NavLink onClick={() => handleClick("/all-chats")}>
+            {unreadCount > 0 && (
+              <ChatNotificationBadge>{unreadCount}</ChatNotificationBadge>
+            )}
             <img src={chatIcon} alt="Chat" />
             Chat
           </NavLink>
@@ -93,27 +113,12 @@ const MenuNav = () => {
           <DropdownMenu />
         </NavLinks>
       </Nav>
-
-      {/* Renderizar resultados filtrados se houver termos de busca */}
-      {searchTerm && (
-        <ResultsContainer>
-          <ResultsTitle>RESULTADO DA PESQUISA</ResultsTitle>
-          <CardGrid>
-            {filteredExchanges.length > 0 ? (
-              filteredExchanges.map((exchange) => (
-                <CardAnuncios key={exchange.id} data={exchange} />
-              ))
-            ) : (
-              <p>Nenhum anúncio encontrado.</p>
-            )}
-          </CardGrid>
-        </ResultsContainer>
-      )}
     </>
   );
 };
 
 export default MenuNav;
+
 
 
 

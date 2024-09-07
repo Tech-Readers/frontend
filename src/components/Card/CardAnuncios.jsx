@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   AdCard, ProfileAnuncio, AnuncioImage, SelectedAdCard,
   SelectedAnuncioInfo, ButtonContainer, EditButton, DeleteButton,
-  MessageButton, ToggleButtonContainer, ReviewContainer 
+  MessageButton, ToggleButtonContainer, ReviewContainer, AdContent, AdDetails
 } from "./CardAnuncios.styles";
 
 import defaultProfileImg from '../../assets/profile.svg';
@@ -139,28 +139,30 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
             <img src={userInfo.image} alt="perfil" />
           </ProfileAnuncio>
 
-          <SelectedAnuncioInfo>
-            <AnuncioImage src={anuncioImage} alt="Anúncio Avaliado" />
-
-            {/* avaliação só será exibida se o usuário não for o dono do anuncio */}
-            {data.anunciante_id !== userId && !hasReviewed && (
-              <ReviewContainer>
-                <h4>Avalie este anúncio:</h4>
-                <div className="stars">
-                  <ReviewStars rating={rating} onClick={(index) => setRating(index)} />
-                </div>
-                <textarea
-                  placeholder="Deixe um comentário (opcional)"
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                />
-                <button onClick={handleSubmitReview}>
-                  Enviar Avaliação
-                </button>
-              </ReviewContainer>
-            )}
-
+          <AdContent>
             <div>
+              <AnuncioImage src={anuncioImage} alt="Anúncio Avaliado" />
+
+              {/* avaliação só será exibida se o usuário não for o dono do anuncio */}
+              {data.anunciante_id !== userId && !hasReviewed && (
+                <ReviewContainer>
+                  <h4>Avalie este anúncio:</h4>
+                  <div className="stars">
+                    <ReviewStars rating={rating} onClick={(index) => setRating(index)} />
+                  </div>
+                  <textarea
+                    placeholder="Deixe um comentário (opcional)"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  />
+                  <button onClick={handleSubmitReview}>
+                    Enviar Avaliação
+                  </button>
+                </ReviewContainer>
+              )}
+            </div>
+
+            <AdDetails>
               <h3>{data.titulo}</h3>
               <p><strong>Nome do Anunciante:</strong> {userInfo.name}</p>
               <p><strong>Livro Oferecido:</strong> {data.titulo_livro_oferecido}</p>
@@ -185,8 +187,8 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
                   </>
                 )}
               </ButtonContainer>
-            </div>
-          </SelectedAnuncioInfo>
+            </AdDetails>
+          </AdContent>
         </SelectedAdCard>
       ) : (
         <AdCard onClick={!isDisabled ? onClick : null} style={{ cursor: isDisabled ? 'not-allowed' : 'pointer' }}>
@@ -222,5 +224,8 @@ const CardAnuncios = ({ data, onClick, selected, isDisabled, onDelete }) => {
 };
 
 export default CardAnuncios;
+
+
+
 
 

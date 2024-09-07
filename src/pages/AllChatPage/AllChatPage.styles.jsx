@@ -39,6 +39,3 @@ export const ChatItem = styled.div`
 
 
 
-
-
-

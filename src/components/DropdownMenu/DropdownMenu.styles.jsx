@@ -7,6 +7,13 @@ export const MenuContainer = styled.div`
 
 export const MenuButton = styled.div`
     cursor: pointer;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #EEEEEE;
+    }
 `;
 
 export const MenuList = styled.div`

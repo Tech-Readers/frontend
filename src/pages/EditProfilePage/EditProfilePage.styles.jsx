@@ -1,3 +1,4 @@
+// EditProfilePage.styles.jsx:
 import styled from 'styled-components';
 import Button from '../../components/Button/Button'; 
 
@@ -90,7 +91,7 @@ export const InputGroup = styled.div`
 export const DoubleInputGroup = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 40px; /* aumentando o espaçamento entre CEP e Número, e entre Município e UF */
   width: 100%;
 
   > div {
@@ -114,10 +115,3 @@ export const CancelButton = styled(Button)`
   margin-top: 10px;
   border: 1px solid #18322E;
 `;
-
-
-
-
-
-
-

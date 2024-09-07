@@ -14,7 +14,7 @@ const DropdownMenu = () => {
   const [showConfirmDeleteModal, setShowConfirmDeleteModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  // Recupera o ID do usuário logado dos cookies
+  // recupera o ID do usuário logado dos cookies
   const loggedInUserId = getCookie('userId');
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const DropdownMenu = () => {
       if (loggedInUserId) {
         try {
           const user = await getUserById(loggedInUserId);
-          setUserProfileImage(user.image || defaultProfileImg); // Usa a imagem do usuário ou a imagem padrão
+          setUserProfileImage(user.image || defaultProfileImg); // usa a imagem do usuário ou a imagem padrão
         } catch (error) {
           console.error('Erro ao buscar o usuário logado:', error);
         }
@@ -36,14 +36,14 @@ const DropdownMenu = () => {
     navigate(path);
   };
 
-  // Função para abrir/fechar o menu
+  // função para abrir/fechar o menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const handleCloseSuccessModal = () => {
     setShowSuccessModal(false);
-    navigate('/'); // Redireciona para a página inicial após excluir o perfil
+    navigate('/'); // redireciona para a página inicial após excluir o perfil
   };
 
   // Função para logout e redirecionamento
@@ -58,7 +58,6 @@ const DropdownMenu = () => {
         <img
           src={userProfileImage}
           alt="Perfil"
-          style={{ width: "35px", borderRadius: "50%" }}
         />
       </MenuButton>
       <MenuList $isOpen={isOpen}>
@@ -101,20 +100,5 @@ const DropdownMenu = () => {
 };
 
 export default DropdownMenu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
