@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-#main
-=======
 <h1>Conectando Leitores</h1> 
 
 <p align="center">
@@ -317,4 +314,3 @@ Running on http://localhost:5173/
 The [MIT License]() (MIT)
 
 Copyright :copyright: 2024 - Conectando Leitores
->>>>>>> b43efce (refatorado)
