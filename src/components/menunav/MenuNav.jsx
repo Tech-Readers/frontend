@@ -42,7 +42,7 @@ export const MenuNav = () => {
                         <img src={chatIcon} alt="Chat" />
                         Chat
                     </NavLink>
-                    <NavLink onClick={() => handleClick("/anuncios")}>
+                    <NavLink onClick={() => handleClick("/perfil")}>
                         <img src={adIcon} alt="Meus Anúncios" />
                         Meus Anúncios
                     </NavLink>

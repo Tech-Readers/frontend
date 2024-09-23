@@ -1,13 +1,13 @@
 // src/components/Chat/Chat.jsx:
 // src/components/Chat/Chat.jsx:
 import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Chat.css";
 import ProfileCard from "./ProfileCard";
 import Footer from "../footer/Footer";
 import { DivColumn } from "../../AppStyle";
 import MenuNav from "../menunav/MenuNav";
 import { getMessagesByExchangeId, createMessage } from "../../services/messageService"; // Importando funções do service
-import { getExchangesByUserId, getAllExchanges } from "../../services/exchangeService"; // Importando funções do service
 
 export const Chat = () => {
     const [messages, setMessages] = useState([]);
@@ -15,9 +15,38 @@ export const Chat = () => {
 
     // Obtendo IDs de usuário e anúncio do localStorage
     const UserLogado = localStorage.getItem("userId"); // ID do usuário logado
-    var ANUNCIO_ID = localStorage.getItem("anuncioId"); // ID do anúncio selecionado
-    var UserRecebe = localStorage.getItem("userDestinatarioId"); // ID do usuário destinatário (obtido de outra forma)
+    const ANUNCIO_ID = localStorage.getItem("anuncioId"); // ID do anúncio selecionado
+    const UserRecebe = localStorage.getItem("userDestinatarioId"); // ID do usuário destinatário (obtido de outra forma)
 
+    const { id } = useParams();
+    const [formData, setFormData] = useState({
+        id: "",
+        usuario_remetente_id: "",
+        usuario_destinatario_id: "",
+        anuncio_id: "",
+        texto: "",
+        data_envio: "",
+        lido: Boolean,
+    });
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const chat = await getExchangeById(id); // token  é obtido internamente
+                setFormData({
+                    id: chat.id,
+                    usuario_remetente_id: chat.usuario_remetente_id,
+                    usuario_destinatario_id: chat.usuario_destinatario_id,
+                    anuncio_id: chat.anuncio_id,
+                    texto: chat.texto,
+                    data_envio: chat.data_envio,
+                });
+            } catch (error) {
+                console.error("Erro ao carregar os dados do anúncio:", error);
+            }
+        };
+
+        fetchData();
+    }, [id]);
 
     // Função para buscar mensagens
     const fetchMessages = async () => {
@@ -48,9 +77,8 @@ export const Chat = () => {
                     usuario_remetente_id: UserLogado,
                 };
 
-                await createMessage(messageData); // Usando função de service para enviar mensagem
+                await createMessage(messageData);
 
-                // Adiciona a mensagem enviada ao estado local
                 const sentMessage = {
                     id: Date.now(),
                     usuario_remetente_id: UserLogado,
@@ -64,19 +92,8 @@ export const Chat = () => {
         }
     };
 
-    const fetchData = async () => {
-        try {
-          const response = await getExchangesByUserId();
-          ANUNCIO_ID = response.data[0].id;
-          UserRecebe = response.data[0].anunciante_id;
-        } catch (error) {
-          console.error('Erro ao buscar dados:', error);
-        }
-      };
-
-    useEffect(() => {    
-        fetchData();
-        fetchMessages(); // Busca mensagens ao carregar o componente
+    useEffect(() => {
+        fetchMessages();
     }, []);
 
     return (

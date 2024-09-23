@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/static/v1?label=HTML&message=5&color=e34f26&style=for-the-badge&logo=html5"/>
   <img src="https://img.shields.io/static/v1?label=CSS&message=3&color=1572b6&style=for-the-badge&logo=css3"/>
   <img src="http://img.shields.io/static/v1?label=javascript&message=ES6&color=f7df1e&style=for-the-badge&logo=javascript"/>
+  <img src="http://img.shields.io/static/v1?label=Axios&message=1.7.5&color=5A29E4&style=for-the-badge&logo=axios"/>
+  <img src="https://img.shields.io/static/v1?label=Styled-Components&message=6.1.12&color=DB7093&style=for-the-badge&logo=styledcomponents"/>
+  <img src="http://img.shields.io/static/v1?label=Figma&message=16.13.3&color=F24E1E&style=for-the-badge&logo=figma"/>
   <img src="http://img.shields.io/static/v1?label=Git&message=2.45.2&color=f05032&style=for-the-badge&logo=git"/>
   <img src="http://img.shields.io/static/v1?label=GitHub&message=2024&color=181717&style=for-the-badge&logo=github"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge"/>
@@ -37,15 +40,35 @@
 ## Arquitetura do Frontend :triangular_ruler: :straight_ruler:
 
 ```plaintext
-public/
-
-
-src/
-
+  Conectando Leitores
+  |
+  |  src/
+  |  │
+  |  ├── assets/
+  |  │
+  |  ├── components/
+  |  │
+  |  ├── pages/
+  |  │
+  |  ├── services/
+  |  │
+  |  ├── App.jsx
+  |  ├── GlobalStyle.jsx
+  |  ├── index.css
+  |  └── main.jsx
+  |
+  | 
+  └── index.html
 ```
 
 
-**Descrição:** 
+**Descrição:** :heavy_check_mark:
+
+1. **Assets:** Pastas que contêm recursos estáticos como imagens e fontes.
+2. **components:** Componentes reutilizáveis que formam a interface do usuário.
+3. **Services:** Funções que lidam com chamadas a APIs e lógica de negócios.
+4. **Pages:** Estrutura das diferentes páginas da aplicação.
+5. **App.jsx e GlobalStyle.jsx:** Arquivos principais que definem a aplicação e estilos globais.
 
 
 ## Instação das depedências :arrow_down_small:
